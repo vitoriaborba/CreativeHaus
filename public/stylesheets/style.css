@@ -1,12 +1,125 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+/* Global Styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+
+body {
+  font-size: 10px;
+  font-family: 'montserrat';
+  margin: 50px;
+}
+
+
+
+/* Font Styles */
+
 a {
-  color: #00b7ff;
+  background-color:#8D6F57;
+  border: solid 2px #8D6F57;
+  color: white;
+  text-decoration: none;
+  font-size: 1.5em;
+  border-radius: 25px;
+  padding: 10px 30px;
+}
+
+a:hover {
+  color: #8D6F57;
+  border: solid 2px #8D6F57;
+  background-color: transparent;
+  
 }
 
 h1 {
-  color: 15px;
+  font-family: 'nimbus-sans-extended';
+  font-weight: 900;
+  font-size: 3em;
+  color: #8D6F57;
 }
+
+
+
+/* Nav Styles */
+
+.nav {
+  display: flex;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+li {
+  margin-right: 10px;
+  list-style: none;
+}
+
+/* Form Styles */
+.container {
+  width: 90vw;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+input {
+  width: 350px;
+  height: 40px;
+  border-radius: 25px;
+  border-width: 3px;
+  margin-bottom: 20px;
+  border-color: #8D6F57;
+  color: #8D6F57;
+  background-color: transparent;
+  border-image: none;
+
+}
+
+label {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color:#8D6F57;
+}
+
+button {
+  background-color:#8D6F57;
+  border: solid 2px #8D6F57;
+  color: white;
+  text-decoration: none;
+  font-size: 1.5em;
+  border-radius: 25px;
+  padding: 10px 30px;
+  margin-top: 10px;
+}
+
+button:hover {
+  color: #8D6F57;
+  border: solid 2px #8D6F57;
+  background-color: transparent;
+  
+}
+
+
+
+

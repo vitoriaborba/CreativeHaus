@@ -1,14 +1,23 @@
-<form action="/auth/signup" method="POST">
-   <label> Username
-      <input type="text" name="username">
-   </label>
-   <label> Password
-      <input type="password" name="password">
-   </label>
+<div class="container">
 
-   <button type="submit">Submit</button>
-</form>
+<div class="form-container">
 
-{{#if errorMessage}}
-   {{errorMessage}}
-{{/if}}
+   <h1>Create Account</h1>
+
+   <form action="/auth/signup" method="POST">
+      <label for="username">Username</label>
+         <input type="text" name="username">
+      
+      <label for="password">Password</label>
+         <input type="password" name="password">
+      
+      <button type="submit">Submit</button>
+   </form>
+
+   {{#if errorMessage}}
+      {{errorMessage}}
+   {{/if}}
+
+   </div>
+
+</div>

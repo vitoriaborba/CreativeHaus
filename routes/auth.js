@@ -32,19 +32,6 @@ router.post("/signup", isLoggedOut, (req, res) => {
       errorMessage: "Your password needs to be at least 8 characters long.",
     });
   }
-
-  //   ! This use case is using a regular expression to control for special characters and min length
-  /*
-  const regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;
-
-  if (!regex.test(password)) {
-    return res.status(400).render("signup", {
-      errorMessage:
-        "Password needs to have at least 8 chars and must contain at least one number, one lowercase and one uppercase letter.",
-    });
-  }
-  */
-
   // Search the database for a user with the username submitted in the form
   User.findOne({ username }).then((found) => {
     // If the user is found, send the message username is taken
@@ -68,7 +55,7 @@ router.post("/signup", isLoggedOut, (req, res) => {
       .then((user) => {
         // Bind the user to the session object
         req.session.user = user;
-        res.redirect("/");
+        res.redirect("/user/user-home");
       })
       .catch((error) => {
         if (error instanceof mongoose.Error.ValidationError) {
@@ -129,7 +116,7 @@ router.post("/login", isLoggedOut, (req, res, next) => {
         }
         req.session.user = user;
         // req.session.user = user._id; // ! better and safer but in this case we saving the entire user object
-        return res.redirect("/");
+        return res.redirect("/user/user-home");
       });
     })
 

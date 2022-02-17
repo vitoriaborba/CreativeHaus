@@ -14,11 +14,11 @@ const User = require("../models/User.model");
 const isLoggedOut = require("../middleware/isLoggedOut");
 const isLoggedIn = require("../middleware/isLoggedIn");
 
-router.get("auth/signup", isLoggedOut, (req, res) => {
+router.get("/signup", isLoggedOut, (req, res) => {
   res.render("auth/signup");
 });
 
-router.post("auth/signup", isLoggedOut, (req, res) => {
+router.post("/signup", isLoggedOut, (req, res) => {
   const { username, password } = req.body;
 
   if (!username) {
@@ -89,11 +89,11 @@ router.post("auth/signup", isLoggedOut, (req, res) => {
   });
 });
 
-router.get("auth/login", isLoggedOut, (req, res) => {
+router.get("/login", isLoggedOut, (req, res) => {
   res.render("auth/login");
 });
 
-router.post("auth/login", isLoggedOut, (req, res, next) => {
+router.post("/login", isLoggedOut, (req, res, next) => {
   const { username, password } = req.body;
 
   if (!username) {
@@ -141,7 +141,7 @@ router.post("auth/login", isLoggedOut, (req, res, next) => {
     });
 });
 
-router.get("auth/logout", isLoggedIn, (req, res) => {
+router.get("/logout", isLoggedIn, (req, res) => {
   req.session.destroy((err) => {
     if (err) {
       return res

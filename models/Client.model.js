@@ -13,6 +13,9 @@ const clientSchema = new Schema(
     required: true,
     trim: true,
     lowercase: true,
+  },
+  colorPalette: {
+    type: Array,
   }
 });
 const Client = model("Client", clientSchema);

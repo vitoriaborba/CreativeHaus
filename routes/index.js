@@ -6,3 +6,11 @@ router.get("/", (req, res, next) => {
 });
 
 module.exports = router;
+
+
+router.get("/color-palette", (req, res, next) => {
+
+res.render("color-palette");
+
+
+})

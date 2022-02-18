@@ -16,3 +16,10 @@ router.get("/:id/client-page", isLoggedIn, (req, res, next) =>{
 })
 module.exports = router;
 
+// // Add New Color 
+
+// router.post("/client/new-color", isLoggedIn, (req, res, next) => {
+
+    
+
+// })

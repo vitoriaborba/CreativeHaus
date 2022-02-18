@@ -1,10 +1,15 @@
+<div class="container">
+
+<div class="form-container">
+
+   <h1>Login</h1>
+
 <form action="/auth/login" method="POST">
-   <label> Username
+   <label for="username">Username</label>
       <input type="text" name="username">
-   </label>
-   <label> Password
+   
+   <label for="password">Password</label>
       <input type="password" name="password">
-   </label>
 
    <button type="submit">Submit</button>
 </form>
@@ -12,3 +17,6 @@
 {{#if errorMessage}}
    {{errorMessage}}
 {{/if}}
+
+</div>
+</div>

@@ -64,6 +64,7 @@ router.post("/signup", isLoggedOut, (req, res) => {
             .render("auth/signup", { errorMessage: error.message });
         }
         if (error.code === 11000) {
+          console.log(error)
           return res.status(400).render("auth/signup", {
             errorMessage:
               "Username need to be unique. The username you chose is already in use.",
@@ -82,7 +83,7 @@ router.get("/login", isLoggedOut, (req, res) => {
 
 router.post("/login", isLoggedOut, (req, res, next) => {
   const { username, password } = req.body;
-
+  
   if (!username) {
     return res
       .status(400)

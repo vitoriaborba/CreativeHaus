@@ -6,13 +6,11 @@ const clientSchema = new Schema(
   user: {type: Schema.Types.ObjectId, ref: 'User'},
   name: {
     type: String,
-    unique: true,
     required: true,
   },
   email: {
     type: String,
     required: true,
-    unique: true,
     trim: true,
     lowercase: true,
   }

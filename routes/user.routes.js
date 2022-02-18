@@ -1,10 +1,18 @@
 const router = require("express").Router();
 const User = require("../models/User.model");
 const Client = require("../models/Client.model");
-
+const isLoggedOut = require("../middleware/isLoggedOut");
+const isLoggedIn = require("../middleware/isLoggedIn");
 
 router.get("/client-list", (req, res, next) => {
-    res.render("user/client-list");
+    
+    User.findById(req.session.user._id)
+    .populate('clients')
+    .then((user) => {
+        console.log(user.clients)
+        res.render("user/client-list", {clients: user.clients});
+    })
+    .catch((err) => next(err))
   });
 
 // Add new client
@@ -17,10 +25,11 @@ router.get("/add-client", (req, res, next) => {
   });
 
   router.post("/add-client", (req, res, next) => {
-      const {name, email, user} = req.body;
-      Client.create({name, email, user})
+      const id = req.session.user._id
+      const {name, email} = req.body;
+      Client.create({name, email})
       .then((dbClient) => {
-          return User.findByIdAndUpdate(user, {$push: {clients: dbClient._id}});
+          return User.findByIdAndUpdate(id, {$push: {clients: dbClient._id}});
       })
       .then((dbClient)=> {
           console.log('client created',{clients: dbClient} )
@@ -28,6 +37,13 @@ router.get("/add-client", (req, res, next) => {
       })
       .catch((err) => next((err)))
   });
+
+  router.get("/user-home", isLoggedIn, (req, res, next) =>{
+    const user = req.session.user;
+
+      res.render("user/user-home", {user});
+  })
+
 
 
 

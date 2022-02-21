@@ -25,31 +25,36 @@ router.get("/:id/client-page", isLoggedIn, (req, res, next) =>{
         
     })
 })
-module.exports = router;
 
 // // Add New Color 
 
 router.get("/:id/client-color", isLoggedIn, async (req, res, next) => {
+    const clientId = req.params.id;
 
     try {
     const {id} = req.params;
-    let colorInfo = [];
+ 
+    let clientColor = {
+        id: clientId,
+        colorInfo: [],
+    }
+
+    // let colorInfo = [];
 
     const foundClient = await Client.findById(id);
 
-    console.log(foundClient)
 
     Promise.all(foundClient.colorPalette.map(async(color) => {
 
       let colorData = await axios.get(`https://www.thecolorapi.com/id?hex=${color}`)
-        colorInfo.push(colorData.data)
-        return colorInfo;
+        clientColor.colorInfo.push(colorData.data)
+        return clientColor;
     }))
 
-        .then(() =>{
-          console.log("FINAL INFO", colorInfo)
-        res.render("client/client-color", {colorInfo, foundClient})  
-        })
+    .then(() =>{
+      res.render("client/client-color", {clientColor})  
+
+  })
 }
 
 catch(err) {
@@ -92,16 +97,18 @@ router.post("/:id/new-color", isLoggedIn, (req, res, next) => {
     
     router.post('/:id/:colorhex/delete', isLoggedIn, (req, res, next) => {
         const id = req.params.id
-        const {colorhex} = req.params.colorhex
-        Client.findById(id)
+        const colorhex = req.params.colorhex
+        console.log("ID:",id)
+        console.log("ColorHex:",colorhex)
+
+        Client.findByIdAndUpdate(id, {$pull: {colorPalette: colorhex}})
         .then(()=>{
-            findOneAndDelete(colorhex)
-            .then(() => {
                 res.redirect(`/client/${id}/client-color`);
-        })
-    })
+        }) 
         .catch((err) => next(err));
     })
-    
+       
 
 
+
+    module.exports = router;

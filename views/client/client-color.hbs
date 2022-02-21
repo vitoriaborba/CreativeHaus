@@ -1,7 +1,7 @@
 <h1>Client Color palette</h1>
 
 <div class="color-container">
-{{#each colorInfo}}
+{{#each clientColor.colorInfo}}
 <div class="color">
 <img src="{{this.image.bare}}" alt="">
 <h3>{{this.name.value}}</h3>
@@ -9,10 +9,10 @@
 <p>Rgb: {{this.rgb.value}}</p>
 <p>Hsl: {{this.hsl.value}}</p>
 <p>Cmyk: {{this.cmyk.value}}</p>
-<form action="/client/{{client._id}}/{{this.hex.clean}}/delete" method="post">
+<form action="/client/{{../clientColor.id}}/{{this.hex.clean}}/delete" method="post">
    <button class="delete-btn" type="submit">Delete Color</button>
 </form>
 </div>
 {{/each}}
 </div>
-<a href="/client/{{clientDetails._id}}/client-page">back</a>
+<a href="/client/{{clientColor.id}}/client-page">back</a>

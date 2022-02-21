@@ -1,27 +1,40 @@
-<div class="container">
+<div class="color-container">
 
 <h1>Need Color Palette Inspiration?</h1>
 
-<div class="form-container">
+<div class="palette-container" >
 
-<form action="/color-palette" method="post">
+<form  action="/color-palette-select" method="post">
    <div class="color-form">
       <label> Pick a base color</label>
-      <input class="color-picker" type="color" id="colorpicker" value="#0000ff">
+      <input class="color-picker" name="colorhex" type="color" id="colorpicker" value="#0000ff">
    </div>
-   <button type="submit">Generate Colour Palette</button>
+    <div class="radio-btns">
+       <label for="monochrome"> Monochrome 
+          <input type="radio" name="paletteOption" id="monochrome" value="monochrome">
+       </label>
+      <label for="analogic"> Analogic 
+     <input type="radio" name="paletteOptionc" id="analogic" value="analogic">
+      </label>
+      <label for="complement"> Complement
+     <input type="radio" name="paletteOption" id="complement" value="complement">
+      </label>
+      <label for="triad"> Triad 
+     <input type="radio" name="paletteOption" id="triad" value="triad">
+      </label>
+      <label for="quad"> Quad 
+     <input type="radio" name="paletteOption" id="quad" value="quad">
+      </label>
+      <button type="submit">Go</button>
+    </div>
 </form>
-
+{{#if errorMessage}}
+<p>{{errorMessage}}</p>
+{{/if}}
 </div>
 </div>
-<form action="/color-palette-select" method="post">
- <label> Pick a base color</label>
-      <input type="color" id="colorpicker" value="#000000">
-   <button type="submit">Generate Colour Palette</button>
-</form>
-
 <div class="color-container">
-{{#each colorScheme}}
+{{#each colorScheme.colors}}
 <div class="color">
 <img src="{{this.image.bare}}" alt="">
 <h3>{{this.name.value}}</h3>
@@ -30,3 +43,4 @@
 </div>
 {{/each}}
 </div>
+

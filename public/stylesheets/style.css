@@ -269,3 +269,38 @@ input[type="color"]::-webkit-color-swatch {
   border-radius: 50%;
 }
 
+.radio-btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.radio-btns p {
+  font-size: 1.2em;
+}
+.radio-btns label {
+  margin: 20px;
+}
+input[type="radio"] {
+  width: 20px;
+  height: 20px;
+  margin-bottom: 0px;
+
+}
+
+.palette-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+.palette-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+.color-container {
+  display: flex;
+}

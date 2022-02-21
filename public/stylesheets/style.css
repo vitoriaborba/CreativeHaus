@@ -233,3 +233,39 @@ form button:hover {
 .color img {
   margin-bottom: 10px;
 }
+
+
+/* Color Picker */
+
+.color-picker {
+
+width: 32px;
+height: 35px;
+padding: 0;
+border: none;
+border-radius: 50%;
+margin-bottom: 0;
+
+}
+
+
+.color-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: solid 3px #8D6F57;
+  border-radius: 50px;
+  padding: 5px 10px 5px 20px;
+  width: 300px;
+  margin: 20px;
+}
+
+.color-form label {
+  margin-bottom: 0px;
+}
+
+input[type="color"]::-webkit-color-swatch {
+  border: none;
+  border-radius: 50%;
+}
+

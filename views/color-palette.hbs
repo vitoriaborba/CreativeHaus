@@ -14,3 +14,19 @@
 
 </div>
 </div>
+<form action="/color-palette-select" method="post">
+ <label> Pick a base color</label>
+      <input type="color" id="colorpicker" value="#000000">
+   <button type="submit">Generate Colour Palette</button>
+</form>
+
+<div class="color-container">
+{{#each colorScheme}}
+<div class="color">
+<img src="{{this.image.bare}}" alt="">
+<h3>{{this.name.value}}</h3>
+<p>Hex: {{this.hex.value}}</p>
+<p>Rgb: {{this.rgb.value}}</p>
+</div>
+{{/each}}
+</div>

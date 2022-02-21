@@ -94,6 +94,7 @@ input {
   color: #8D6F57;
   background-color: transparent;
   border-style: solid;
+  padding: 10px 20px;
 
 }
 
@@ -213,6 +214,21 @@ form button:hover {
   align-items: space-between;
 }
 
+/* color palette styling */
 
+.color-container {
+  display:flex;
+  justify-content: center;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
 
+.color {
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 20px;
+}
 
+.color img {
+  margin-bottom: 10px;
+}

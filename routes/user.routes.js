@@ -44,6 +44,27 @@ router.get("/add-client", (req, res, next) => {
       res.render("user/user-home", {user});
   })
 
+  router.get("/:id/edit-client", (req, res, next) => {
+   const {id} = req.params
+    Client.findById(id)
+    .then((dbClient) => {
+        res.render("user/edit-client", {dbClient});
+    })
+    .catch((err) => next(err))
+  });
+  
+  router.post('/:id/edit-client', (req, res, next) => {
+    const {id} = req.params
+    const { name, email } = req.body;
+  
+    Client.findByIdAndUpdate(id, { name, email })
+      .then(() => {
+        res.redirect(`/client/${id}/client-page`);
+      })
+      .catch((err) => {
+        next(err);
+      });
+  });
 
 
 

@@ -20,16 +20,26 @@ router.post("/color-palette-select", async (req, res, next) => {
   const colorhex = req.body.colorhex.split('#')[1]
   const paletteOption = req.body.paletteOption
   let colorScheme;
+  let count = 5;
+  console.log(paletteOption)
   if (!paletteOption) {
     return res
       .status(400)
       .render("color-palette", { errorMessage: "Please select a palette option." });
   }
   try {
-    colorScheme = await axios.get(`https://www.thecolorapi.com/scheme?hex=${colorhex}&mode=${paletteOption}&count=5`)
-    console.log(colorhex)
-    console.log(colorScheme.colours)
+    if (paletteOption === "triad") {
+      count=3;
+    }
+    if (paletteOption === "quad") {
+      count=4;
+    }
+    if (paletteOption === "complement") {
+      count=2;
+    }
 
+    colorScheme = await axios.get(`https://www.thecolorapi.com/scheme?hex=${colorhex}&mode=${paletteOption}&count=${count}`)
+  
     res.render("color-palette", {colorScheme: colorScheme.data})
   }
   catch(err) {

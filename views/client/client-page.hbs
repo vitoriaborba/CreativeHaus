@@ -15,3 +15,9 @@
    </label>
    <button type="submit">+</button>
 </form>
+<form action="/client/{{clientDetails._id}}/delete" method="post">
+   <button class="delete-btn" type="submit">Delete Client</button>
+</form>
+<form action="/user/{{clientDetails._id}}/edit-client" method="get">
+   <button class="edit-btn" type="submit">Edit Client</button>
+</form>

@@ -32,10 +32,8 @@ module.exports = router;
 router.get("/:id/client-color", isLoggedIn, async (req, res, next) => {
 
     try {
-
-
     const {id} = req.params;
-    let colorInfo = []
+    let colorInfo = [];
 
     const foundClient = await Client.findById(id);
 
@@ -45,13 +43,13 @@ router.get("/:id/client-color", isLoggedIn, async (req, res, next) => {
 
       let colorData = await axios.get(`https://www.thecolorapi.com/id?hex=${color}`)
         colorInfo.push(colorData.data)
-        console.log('inside map', colorInfo)
-
+        return colorInfo;
     }))
 
-        console.log("color infooooo", colorInfo)
-        res.render("client/client-color")
-
+        .then(() =>{
+          console.log("FINAL INFO", colorInfo)
+        res.render("client/client-color", {colorInfo, foundClient})  
+        })
 }
 
 catch(err) {
@@ -64,7 +62,7 @@ console.log(err)
 
     // res.render("client/client-color", {client: foundClient, colorInfo: apiData.data})
 
-router.post("/:id/new-color", (req, res, next) => {
+router.post("/:id/new-color", isLoggedIn, (req, res, next) => {
 
     const {id} = req.params;
     const {color} = req.body;
@@ -74,22 +72,36 @@ router.post("/:id/new-color", (req, res, next) => {
 
         console.log(updatedClient)
     
-        res.redirect(`/client/${id}/client-page`)
+        res.redirect(`/client/${id}/client-color`)
 
     })
 
     .catch((err) => next((err)))
 });
 
-// Get color info from API
+    
 
-
-
-    // axios.get(`https://www.thecolorapi.com/id?hex=${color}`)
-    // .then((colorData)=> {
-
-
-
-    // })
+    router.post('/:id/delete', isLoggedIn, (req, res, next) => {
+        const {id} = req.params;
+        Client.findByIdAndDelete(id)
+        .then(() => {
+            res.redirect('/user/client-list');
+    })
+        .catch((err) => next(err));
+    })
+    
+    router.post('/:id/:colorhex/delete', isLoggedIn, (req, res, next) => {
+        const id = req.params.id
+        const {colorhex} = req.params.colorhex
+        Client.findById(id)
+        .then(()=>{
+            findOneAndDelete(colorhex)
+            .then(() => {
+                res.redirect(`/client/${id}/client-color`);
+        })
+    })
+        .catch((err) => next(err));
+    })
+    
 
 

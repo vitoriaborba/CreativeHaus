@@ -7,14 +7,16 @@
                   <div class="nav-btns">
                      <div>
                          <a href="/user/user-home">back</a>
-                         <div id="nav-form">
-                             <h3>Create New Client</h3>
-                        <form action="/user/add-client" method="POST">
-                            <input type="text" placeholder="name" name="name">
-                            <input type="email" placeholder="email" name="email">
+                        <form class= "nav-form" action="/user/add-client" enctype="multipart/form-data"  method="POST">
+                        <label> Name
+                            <input type="text" name="name">
+                        </label>
+                        <label> Email
+                            <input type="email" name="email">
+                        </label>
                         <label for="imageUrl">Client Logo</label>
-                        <input type="file" name="image" class="form-control" />
-                        <button type="submit">Create Client</button>
+                        <input type="file" name="image" class="form-control-file" />
+                        <button type="submit">New Client</button>
                         </form>
 
                         {{#if errorMessage}}

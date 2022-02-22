@@ -2,7 +2,7 @@
 
 <div class="form-container">
 
-<form action="/user/{{dbClient._id}}/edit-client" method="POST">
+<form action="/user/{{dbClient._id}}/edit-client" enctype="multipart/form-data" method="POST">
    <label for="name">Name</label>
       <input type="text" name="name" value="{{dbClient.name}}">
   
@@ -10,7 +10,7 @@
       <input type="email" name="email" value="{{dbClient.email}}">
 
     <label for="imageUrl">Client Logo</label>
-   <input type="file" name="image" class="form-control" value="{{dbClient.imageUrl}}"/>
+   <input type="file" name="image" class="form-control-file" value="{{dbClient.imageUrl}}"/>
    
    <button type="submit">Submit</button>
 </form>

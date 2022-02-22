@@ -3,6 +3,7 @@ const User = require("../models/User.model");
 const Client = require("../models/Client.model");
 const isLoggedOut = require("../middleware/isLoggedOut");
 const isLoggedIn = require("../middleware/isLoggedIn");
+const fileUploader = require('../config/cloudinary.config');
 
 router.get("/client-list", (req, res, next) => {
     
@@ -24,15 +25,16 @@ router.get("/add-client", (req, res, next) => {
     .catch((err) => next(err))
   });
 
-  router.post("/add-client", (req, res, next) => {
+  router.post("/add-client", fileUploader.single('image'), (req, res, next) => {
       const id = req.session.user._id
       const {name, email} = req.body;
-      let imageUrl
+      let image;
+
 
        if (req.file) {
-    imageUrl = req.file.path;
+    image = req.file.path;
   }
-      Client.create({name, email, imageUrl})
+      Client.create({name, email, imageUrl: image})
       .then((dbClient) => {
           return User.findByIdAndUpdate(id, {$push: {clients: dbClient._id}});
       })
@@ -58,11 +60,16 @@ router.get("/add-client", (req, res, next) => {
     .catch((err) => next(err))
   });
   
-  router.post('/:id/edit-client', (req, res, next) => {
+  router.post('/:id/edit-client', fileUploader.single('image'), (req, res, next) => {
     const {id} = req.params
-    const { name, email } = req.body;
+    const { name, email} = req.body;
+    let image;
+
+    if (req.file) {
+ image = req.file.path;
+}
   
-    Client.findByIdAndUpdate(id, { name, email })
+    Client.findByIdAndUpdate(id, { name, email, imageUrl: image })
       .then(() => {
         res.redirect(`/client/${id}/client-page`);
       })

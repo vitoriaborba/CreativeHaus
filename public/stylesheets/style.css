@@ -12,47 +12,43 @@ body {
   font-family: 'montserrat';
   font-weight:600;
   margin: 50px;
+  background-color: black;
 }
 
 
-h1 {
-  font-family: 'nimbus-sans-extended';
-  font-weight: 900;
-  font-size: 3em;
-  color: #8D6F57;
-}
-
-
-
-
-/* Nav Styles */
-
-.nav {
-  display: flex;
-  margin-bottom: 30px;
-  margin-top: 30px;
-}
-
-li {
-  margin-right: 10px;
-  list-style: none;
-}
-
-.nav-bar {
-  display: flex;
-  flex-direction: row-reverse;
-}
-
-/*  Sign Up / Login / Client Edit Form Styles */
 .container {
-  width: 90vw;
-  height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  height: 80vh;
 }
+
+.centered-box {
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn {
+  border: solid 2px whitesmoke;
+  color: whitesmoke;
+  text-decoration: none;
+  padding: 10px 30px;
+  border-radius: 25px;
+  font-size: 1.4em;
+  margin: 20px 10px;
+}
+
+
+.btn:hover {
+  background-color: whitesmoke;
+  color: black;
+}
+
+/* General Forms */
+
 
 .form-container {
   display: flex;
@@ -61,202 +57,155 @@ li {
   align-items: flex-start;
 }
 
-form {
+.auth-form {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-content: center;
+  align-items: flex-start;
   margin-top: 20px;
   margin-bottom: 20px;
+  color: whitesmoke;
 }
 
-input {
+.auth-form input {
   width: 350px;
   height: 40px;
   border-radius: 25px;
-  border-width: 3px;
+  border-width: 2px;
   margin-bottom: 20px;
-  border-color: #8D6F57;
-  color: #8D6F57;
+  border-color: whitesmoke;
+  color: whitesmoke;
   background-color: transparent;
   border-style: solid;
   padding: 10px 20px;
-
 }
 
-label {
-  font-size: 1.5em;
+.auth-form label {
   margin-bottom: 10px;
-  color:#8D6F57;
-}
-
-form button {
-  background-color:#8D6F57;
-  border: solid 3px #8D6F57;
-  color: white;
-  text-decoration: none;
   font-size: 1.5em;
-  border-radius: 25px;
+}
+
+.auth-form button {
+  border: solid 2px whitesmoke;
+  color: whitesmoke;
+  text-decoration: none;
   padding: 10px 30px;
-  margin-top: 10px;
-  font-family: 'montserrat';
+  border-radius: 25px;
+  font-size: 1.4em;
+  margin: 20px 0px;
+  background-color: transparent;
+  font-family: montserrat;
 
 }
 
-form button:hover {
-  color: #8D6F57;
-  border: solid 3px #8D6F57;
-  background-color: transparent;
+.auth-form button:hover {
+  background-color: whitesmoke;
+  color: black;
+}
+
+#back-btn {
+  border:none;
+  padding: 0px;
+  border-radius: 0px;
+  border-bottom: solid 2px whitesmoke;
+  padding-bottom: 5px;
+  width: 50px;
   
 }
 
-
-/* ------------- HAMBURGER NAVIGATION -------------- */
-
-.nav-container {
-	width: 100%;
-	margin: 0 auto;
-	padding-left: 10px;
-	padding-right: 10px;
-
+#back-btn:hover {
+  background-color:transparent;
+  color: turquoise;
+  border-bottom:solid 2px turquoise;
 }
 
-.hamburger {
-	position: relative;
-	display: block;
-	width: 35px;
-	cursor: pointer;
-	appearance: none;
-	background: none;
-	outline: none;
-	border: none;
-  z-index: 100;
+/* Nav Forms*/
+
+.form-box {
+  height: 20vh;
+  width: 20vh;
 }
 
-.hamburger .bar, .hamburger:after, .hamburger:before {
-	content: '';
-	display: block;
-	width: 100%;
-	height: 5px;
-	background-color:#8D6F57;
-	margin: 6px 0px;
-	transition: 0.8s;
+.nav-form {
 
-}
-
-.hamburger.is-active:before {
-	transform: rotate(-45deg) translate(-8px, 6px);
-  background-color: white;
-}
-
-.hamburger.is-active:after {
-	transform: rotate(45deg) translate(-9px, -8px);
-  background-color: white;
-}
-
-.hamburger.is-active .bar {
-	opacity: 0;
-}
-
-.hamburger-nav {
-	position: fixed;
-	top: 0;
-	right: 100%;
-	width: 25%;
-	min-height: 100vh;
-	display: block;
-	z-index: 98;
-	background-color: #8D6F57;
-	padding-top: 140px;
-	transition: 0.4s;
-}
-
-.hamburger-nav.is-active {
-	left: 0;
-}
-
-.hamburger-nav a {
-	display: block;
-	width: 100%;
-	max-width: 200px;
-	margin: 0 auto 20px;
-	text-align: center;
-	padding: 12px 16px;
-	background-color: transparent;
-	color: white;
-	text-decoration: none;
-  border: solid 3px white;
-  border-radius: 25px;
-  font-size: 1.5em;
-}
-
-.hamburger-nav a:hover {
-	background-color: white;
-  color: #8D6F57;
-}
-
-.nav {
-  display:flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 70vh;
-}
-
-/* Nav Form Styles */
-
-#nav-form {
-  background-color: black;
-  margin: 10%;
-  padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  margin: 20px;
 
 }
 
-#nav-form h3 {
+.nav-form input {
+  background-color: transparent;
   color: white;
-}
-
-#nav-form input {
-  color: white;
-  border: none;
-  border-radius: 0px;
-  border-bottom: solid 3px white;
-  width: 200px;
-}
-
-#nav-form ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color:white;
-  opacity: 1; /* Firefox */
-}
-
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
-  color: white;
-}
-
-::-ms-input-placeholder { /* Microsoft Edge */
-  color: white;
-}
-
-#nav-form label {
-
-  color: white;
+  border:none;
+  border-bottom: solid 2px white;
+  margin-bottom: 20px;
   padding-bottom: 5px;
 
 }
 
-#nav-form button {
-  border: solid 3px white;
-  background-color: transparent;
+
+.nav-form input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: whitesmoke;
+  opacity: 1; /* Firefox */
 }
 
-#nav-form button:hover{
-  border: solid 3px white;
-  background-color: white;
-  color: #8D6F57;
+.nav-form input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: whitesmoke;
+}
 
+.nav-form input::-ms-input-placeholder { /* Microsoft Edge */
+  color: whitesmoke;
+}
+
+input[type='file']::-webkit-file-upload-button {
+  color: black;
+  background-color: turquoise;
+  border: none;
+  font-size: 1em;
+  padding: 5px 10px;
+  margin-right: 10px;
+}
+
+
+#form-btn {
+  border: solid 2px whitesmoke;
+  color: whitesmoke;
+  text-decoration: none;
+  padding: 10px 30px;
+  border-radius: 25px;
+  font-size: 1.4em;
+  margin: 20px 0px;
+  background-color: transparent;
+  font-family: montserrat;
+}
+
+#form-btn:hover {
+  background-color: whitesmoke;
+  color: black;
+}
+
+#nav-with-form {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: space-between;
+}
+
+/* Font Styles */
+
+
+h1 {
+  font-family: 'nimbus-sans-extended';
+  font-weight: 900;
+  font-size: 5em;
+  color: whitesmoke;
+}
+
+p {
+  color: white;
 }
 
 /* -------------- CLIENT COLOR PALETTE DETAILS PAGE -------------- */
@@ -283,15 +232,21 @@ form button:hover {
 /* --------------- COLOR PALETTE GENERATOR PAGE --------------- */
 
 
+
 /* Color Picker */
+
+.color-palette-title {
+  text-align: center;
+  margin-bottom: 10px;
+}
 
 .color-picker {
 
-width: 32px;
+width: 34px;
 height: 35px;
 padding: 0;
 border: none;
-border-radius: 50%;
+border-radius: 100px;
 margin-bottom: 0;
 
 }
@@ -301,15 +256,17 @@ margin-bottom: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: solid 3px #8D6F57;
+  border: solid 3px whitesmoke;
   border-radius: 50px;
-  padding: 5px 10px 5px 20px;
+  padding: 5px 7px 5px 20px;
   width: 300px;
   margin: 20px;
 }
 
 .color-form label {
   margin-bottom: 0px;
+  color: whitesmoke;
+  font-size: 1.2em;
 }
 
 input[type="color"]::-webkit-color-swatch {
@@ -322,16 +279,17 @@ input[type="color"]::-webkit-color-swatch {
   justify-content: center;
   align-items: center;
 }
-.radio-btns p {
-  font-size: 1.2em;
-}
+
 .radio-btns label {
   margin: 20px;
+  color: white;
+  font-size: 1.2em;
 }
 input[type="radio"] {
   width: 20px;
   height: 20px;
   margin-bottom: 0px;
+  margin-left: 10px;
 
 }
 
@@ -358,15 +316,19 @@ input[type="radio"] {
 /* ---------------------- CLIENT PAGE -------------------- */
 
 .color-palette-box {
-  border: solid 3px #8D6F57;
-  width: 40vw;
-  height: 30vh;
-  padding: 20px;
+  border: solid 3px whitesmoke;
+  padding: 35px 20px 20px 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   border-radius: 30px;
+  color: whitesmoke;
+  margin: 30px;
+}
+
+.color-palette-box h3 {
+  font-size: 2em;
 }
 
 .color-circles {
@@ -388,9 +350,88 @@ input[type="radio"] {
 display: flex;
 flex-direction: column;
 padding: 10px;
-margin: 10px;
+margin: 20px;
+
 }
 
 .client-details h2 {
 text-align: center;
+color: whitesmoke;
 }
+
+.client-details a img {
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+.client-details a img:hover {
+  opacity:0.5;
+}
+
+/* Add Color Form */
+
+#round-btn {
+border-radius: 50%;
+background-color:turquoise;
+color: black;
+width: 30px;
+height: 30px;
+border: none;
+font-size: 1.5em;
+font-weight: bold;
+}
+
+#round-btn:hover {
+  background-color: whitesmoke;
+}
+
+.add-color {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-color input {
+  border: none;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+
+}
+
+.add-color {
+  border: solid 2px whitesmoke;
+  border-radius: 30px;
+  padding: 5px 5px 5px 20px;
+}
+
+/* Edit and Delete Buttons */
+
+.client-btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.client-btns form {
+  margin: 20px;
+}
+
+/* CLIENT COLOR PALETTE DETAILS */
+
+#delete-btn {
+
+border: none;
+background-color: transparent;
+color: white;
+border-bottom: solid 2px whitesmoke;
+padding-bottom: 5px;
+margin-top: 10px;
+
+}
+
+#delete-btn:hover {
+  color: red;
+  border-bottom: solid 2px red;
+}
+
+

@@ -1,33 +1,31 @@
 <header>
          <div class="nav-bar">
-            <h3>BrandLogo</h3>
+            <h3 id="logo">BrandLogo</h3>
 		<div class="nav-container">
             <nav class="hamburger-nav">
                <div class="nav">
                   <div class="nav-btns">
-                     <div>
-                         <a href="/user/user-home">back</a>
-                        <form class= "nav-form" action="/user/add-client" enctype="multipart/form-data"  method="POST">
-                        <label> Name
-                            <input type="text" name="name">
-                        </label>
-                        <label> Email
-                            <input type="email" name="email">
-                        </label>
-                        <label for="imageUrl">Client Logo</label>
-                        <input type="file" name="image" class="form-control-file" />
-                        <button type="submit">New Client</button>
-                        </form>
+                        <div id="nav-with-form">
+                            <a id="back-btn" href="/user/user-home">&#171 back</a>
+                                <div class='form-box'>
+                                    <form class="nav-form" action="/user/add-client" enctype="multipart/form-data"  method="POST">
+                                        <input type="text" name="name" placeholder="Client Name">
+                                        <input type="email" name="email" placeholder="Email">
+                                    <input type="file" name="image" class="form-control-file" placeholder="Client Logo" />
+                                    <button id="form-btn" type="submit">Add New Client</button>
+                                    </form>
+                                </div>
 
-                        {{#if errorMessage}}
-                        {{errorMessage}}
-                        {{/if}}
+                            {{#if errorMessage}}
+                            {{errorMessage}}
+                            {{/if}}
 
-                     </div>
-                    <div class="log-out">
-                     <a href="/auth/logout">Log Out</a>
+                        </div>
+                        <div class="log-out">
+                        <a href="/auth/logout">Log Out</a>
+                        </div>
+                    
                     </div>
-                </div>
                </div>
             </nav>
 			<button class="hamburger">
@@ -40,7 +38,6 @@
 
 <div class="container">
 
-<h1>Client list</h1>
 <div class="client-row">
 {{#each clients}}
 <div class="client-details">
@@ -49,4 +46,6 @@
 </div>
 {{/each}}
 </div>
+
+
 </div>

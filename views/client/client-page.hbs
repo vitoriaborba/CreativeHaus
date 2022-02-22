@@ -4,19 +4,20 @@
 
 <header>
          <div class="nav-bar">
-            <h3>BrandLogo</h3>
+            <h3 id="logo">BrandLogo</h3>
 		<div class="nav-container">
             <nav class="hamburger-nav">
                <div class="nav">
                   <div class="nav-btns">
-                     <a href="/user/client-list">Back</a>
-                     <div id="nav-form">
+                     <a id="back-btn" href="/user/client-list">&#171 back</a>
+                     <div>
                          <div class="color-palette-form">
-                         <form action="/client/{{clientDetails._id}}/new-color" method="post">
-                        <label>Add Color#
-                              <input type="text" name="color">
-                        </label>
-                           <button type="submit">+</button>
+                            <p>Add Color</p>
+                         <form class="nav-form" action="/client/{{clientDetails._id}}/new-color" method="post">
+                           <div class="add-color">
+                                 <input type="text" name="color" placeholder="HEX #">
+                                 <button id="round-btn" type="submit">+</button>
+                           </div>
                         </form>
                         </div>
                      </div> 
@@ -26,12 +27,6 @@
                               <input type="text" name="font">
                            <button type="submit">+</button>
                         </form> --}}
-                        <form action="/client/{{clientDetails._id}}/delete" method="post">
-                           <button class="delete-btn" type="submit">Delete Client</button>
-                        </form>
-                        <form action="/user/{{clientDetails._id}}/edit-client" method="get">
-                           <button class="edit-btn" type="submit">Edit Client</button>
-                        </form>
                      
                     <div class="log-out">
                      <a href="/auth/logout">Log Out</a>
@@ -47,10 +42,11 @@
 	</header>
 
 
-<h1>{{clientDetails.name}}</h1>
+
 
 <div class="container">
 
+   <h1>{{clientDetails.name}}</h1>
 
    <div class="color-palette-box">
       <h3>Color Palette</h3>
@@ -58,13 +54,22 @@
 
       {{#each clientDetails.colorPalette}}
 
-         <div style=" border: solid 1px black; background-color:#{{this}}; width: 50px; height: 50px; border-radius: 50%;"></div>
+         <div style="background-color:#{{this}}; width: 70px; height: 70px; border-radius: 50%; margin: 0px 10px;"></div>
       
       {{/each}}
       </div>
 
-      <a class="underline-btn"href="/client/{{clientDetails._id}}/client-color">View Details</a>
+      <a class="btn"href="/client/{{clientDetails._id}}/client-color">View Details</a>
 
    </div>
+
+      <div class="client-btns">
+            <form action="/client/{{clientDetails._id}}/delete" method="post">
+                  <button id="form-btn" class="delete"type="submit">Delete Client</button>
+            </form>
+            <form action="/user/{{clientDetails._id}}/edit-client" method="get">
+                  <button id="form-btn" type="submit">Edit Client</button>
+            </form>
+      </div>
 
 </div>

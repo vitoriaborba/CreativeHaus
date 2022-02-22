@@ -1,0 +1,89 @@
+.nav-container {
+	width: 100%;
+	margin: 0 auto;
+	padding-left: 10px;
+	padding-right: 10px;
+
+}
+
+.hamburger {
+	position: relative;
+	display: block;
+	width: 35px;
+	cursor: pointer;
+	appearance: none;
+	background: none;
+	outline: none;
+	border: none;
+  z-index: 100;
+}
+
+.hamburger .bar, .hamburger:after, .hamburger:before {
+	content: '';
+	display: block;
+	width: 100%;
+	height: 3px;
+	background-color:whitesmoke;
+	margin: 6px 0px;
+	transition: 0.8s;
+
+}
+
+.hamburger.is-active:before {
+	transform: rotate(-45deg) translate(-7px, 6px);
+  background-color: whitesmoke;
+}
+
+.hamburger.is-active:after {
+	transform: rotate(45deg) translate(-6px, -7px);
+  background-color: whitesmoke;
+}
+
+.hamburger.is-active .bar {
+	opacity: 0;
+}
+
+.hamburger-nav {
+	position: fixed;
+	top: 0;
+	right: 100%;
+	width: 25%;
+	min-height: 100vh;
+	display: block;
+	z-index: 98;
+	background-color: black;
+	padding-top: 140px;
+	transition: 0.4s;
+    border-right: solid 2px whitesmoke;
+}
+
+.hamburger-nav.is-active {
+	left: 0;
+}
+
+.hamburger-nav a {
+	display: block;
+	width: 100%;
+	max-width: 200px;
+	margin: 0 auto 20px;
+	text-align: center;
+	padding: 12px 16px;
+	background-color: transparent;
+	color: whitesmoke;
+	text-decoration: none;
+  border: solid 2px whitesmoke;
+  border-radius: 25px;
+  font-size: 1.4em;
+}
+
+.hamburger-nav a:hover {
+	background-color: whitesmoke;
+  color: black;
+}
+
+.nav {
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 70vh;
+}

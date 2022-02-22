@@ -94,6 +94,8 @@ router.post("/:id/new-color", isLoggedIn, (req, res, next) => {
     })
         .catch((err) => next(err));
     })
+
+// Delete a color
     
     router.post('/:id/:colorhex/delete', isLoggedIn, (req, res, next) => {
         const id = req.params.id

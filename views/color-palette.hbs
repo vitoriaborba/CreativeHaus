@@ -1,12 +1,41 @@
+<header>
+         <div class="nav-bar">
+            <h3 id="logo">BrandLogo</h3>
+		<div class="nav-container">
+            <nav class="hamburger-nav">
+               <div class="nav">
+                  <div class="nav-btns">
+                     {{#unless user}}
+                     <a href="/auth/signup">Sign Up</a>
+                     <a href="/auth/login">Login</a>
+                     {{/unless}}
+                     {{#if user}}
+                     <a href="/user/user-home">User profile</a>
+                  </div>
+                  <div class="log-out">
+                     <a href="/auth/logout">Log Out</a>
+                  </div>
+                  {{/if}}
+                </div>
+            </nav>
+			<button class="hamburger">
+				<div class="bar"></div>
+			</button>
+		</div>
+      </div>
+	</header>
+
+   <div class="container">
+
 <div class="color-container">
 
-<h1>Need Color Palette Inspiration?</h1>
+<h1 class="color-palette-title">Need Color <br> Palette Inspiration?</h1>
 
 <div class="palette-container" >
 
 <form  action="/color-palette-select" method="post">
    <div class="color-form">
-      <label> Pick a base color</label>
+      <label> Pick a base color &#187;</label>
       <input class="color-picker" name="colorhex" type="color" id="colorpicker" value="#000000">
    </div>
     <div class="radio-btns">
@@ -25,7 +54,7 @@
       <label for="quad"> Quad 
      <input type="radio" name="paletteOption" id="quad" value="quad">
       </label>
-      <button type="submit">Go</button>
+      <button id="form-btn" type="submit">Go</button>
     </div>
 </form>
 {{#if errorMessage}}
@@ -42,5 +71,7 @@
 <p>{{this.rgb.value}}</p>
 </div>
 {{/each}}
+</div>
+
 </div>
 

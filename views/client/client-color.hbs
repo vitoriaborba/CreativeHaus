@@ -1,12 +1,12 @@
 
 <header>
          <div class="nav-bar">
-            <h3>BrandLogo</h3>
+            <h3 id="logo">BrandLogo</h3>
 		<div class="nav-container">
             <nav class="hamburger-nav">
                <div class="nav">
                   <div class="nav-btns">
-                     <a href="/user/client-list">Back</a>
+                     <a id="back-btn" href="/user/client-list"> &#171 back</a>
                      <a href="/user/user-home">User profile</a>
 
                   </div>
@@ -22,7 +22,7 @@
       </div>
 	</header>
 
-
+<div class="container">
 
 <h1>Client Color palette</h1>
 
@@ -31,14 +31,15 @@
 <div class="color">
 <img src="{{this.image.bare}}" alt="">
 <h3>{{this.name.value}}</h3>
-<p>Hex: {{this.hex.value}}</p>
-<p>Rgb: {{this.rgb.value}}</p>
-<p>Hsl: {{this.hsl.value}}</p>
-<p>Cmyk: {{this.cmyk.value}}</p>
+<p>{{this.hex.value}}</p>
+<p>{{this.rgb.value}}</p>
+<p>{{this.hsl.value}}</p>
+<p>{{this.cmyk.value}}</p>
 <form action="/client/{{../clientColor.id}}/{{this.hex.clean}}/delete" method="post">
-   <button class="delete-btn" type="submit">Delete Color</button>
+   <button id="delete-btn" type="submit">Delete</button>
 </form>
 </div>
 {{/each}}
 </div>
-<a href="/client/{{clientColor.id}}/client-page">back</a>
+
+</div>

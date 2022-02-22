@@ -19,6 +19,11 @@ const clientSchema = new Schema(
   },
   fontSuite: {
     type: Array,
+  },
+  imageUrl: {
+    type: String,
+    default:
+      "https://filmshusid.fo/wp-content/themes/films/assets/images/default.png",
   }
 });
 const Client = model("Client", clientSchema);

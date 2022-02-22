@@ -18,7 +18,7 @@ body {
 
 /* Font Styles */
 
-a {
+/* a {
   background-color:#8D6F57;
   border: solid 2px #8D6F57;
   color: white;
@@ -26,7 +26,7 @@ a {
   font-size: 1.5em;
   border-radius: 25px;
   padding: 10px 30px;
-}
+} */
 
 a:hover {
   color: #8D6F57;
@@ -353,3 +353,19 @@ input[type="radio"] {
   border: solid 3px #8D6F57;
 }
 
+/* Client List */
+
+.client-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.client-details {
+display: flex;
+flex-direction: column;
+padding: 10px;
+margin: 10px;
+}
+
+.client-details h2 {
+text-align: center;
+}

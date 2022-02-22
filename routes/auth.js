@@ -21,6 +21,7 @@ router.get("/signup", isLoggedOut, (req, res) => {
 router.post("/signup", isLoggedOut, (req, res) => {
   const { username, password } = req.body;
 
+
   if (!username) {
     return res
       .status(400)

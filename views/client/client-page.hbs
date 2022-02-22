@@ -21,17 +21,20 @@
                         </div>
 
 
-                        <form action="/client/new-font" method="post">
+                      {{!--   <form action="/client/new-font" method="post">
                         <label> Add Font </label>
                               <input type="text" name="font">
                            <button type="submit">+</button>
-                        </form>
+                        </form> --}}
                         <form action="/client/{{clientDetails._id}}/delete" method="post">
                            <button class="delete-btn" type="submit">Delete Client</button>
                         </form>
                         <form action="/user/{{clientDetails._id}}/edit-client" method="get">
                            <button class="edit-btn" type="submit">Edit Client</button>
                         </form>
+                     </div> 
+                     <div>
+                     <a href="/user/{{user._id}}/edit-client">Edit Client</a>
                      </div>
                     <div class="log-out">
                      <a href="/auth/logout">Log Out</a>
@@ -64,5 +67,6 @@
       <a class="underline-btn"href="/client/{{clientDetails._id}}/client-color">View Details</a>
 
    </div>
+
 
 </div>

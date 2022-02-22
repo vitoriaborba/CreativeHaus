@@ -14,7 +14,9 @@
                         <label> Email
                             <input type="email" name="email">
                         </label>
-                        <button type="submit">Submit</button>
+                        <label for="imageUrl">Client Logo</label>
+                        <input type="file" name="image" class="form-control" />
+                        <button type="submit">New Client</button>
                         </form>
 
                         {{#if errorMessage}}
@@ -39,9 +41,12 @@
 <div class="container">
 
 <h1>Client list</h1>
-
+<div class="client-row">
 {{#each clients}}
-<a href="/client/{{_id}}/client-page">{{name}}</a>
+<div class="client-details">
+ <a href="/client/{{_id}}/client-page"><img src="{{imageUrl}}" alt="{{name}}" /></a>
+ <h2>{{name}}</h2>
+</div>
 {{/each}}
-
+</div>
 </div>

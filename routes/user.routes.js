@@ -27,7 +27,12 @@ router.get("/add-client", (req, res, next) => {
   router.post("/add-client", (req, res, next) => {
       const id = req.session.user._id
       const {name, email} = req.body;
-      Client.create({name, email})
+      let imageUrl
+
+       if (req.file) {
+    imageUrl = req.file.path;
+  }
+      Client.create({name, email, imageUrl})
       .then((dbClient) => {
           return User.findByIdAndUpdate(id, {$push: {clients: dbClient._id}});
       })
@@ -65,6 +70,15 @@ router.get("/add-client", (req, res, next) => {
         next(err);
       });
   });
+
+  router.post('/:id/delete', isLoggedIn, (req, res, next) => {
+    const {id} = req.params;
+    User.findByIdAndDelete(id)
+    .then(() => {
+        res.redirect('/user/client-list');
+})
+    .catch((err) => next(err));
+})
 
 
 

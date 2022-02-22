@@ -10,7 +10,7 @@
                <div class="nav">
                   <div class="nav-btns">
                      <a href="/user/client-list">Back</a>
-                     <div class="nav-form">
+                     <div id="nav-form">
                          <div class="color-palette-form">
                          <form action="/client/{{clientDetails._id}}/new-color" method="post">
                         <label>Add Color#
@@ -19,7 +19,7 @@
                            <button type="submit">+</button>
                         </form>
                         </div>
-
+                     </div> 
 
                       {{!--   <form action="/client/new-font" method="post">
                         <label> Add Font </label>
@@ -32,10 +32,7 @@
                         <form action="/user/{{clientDetails._id}}/edit-client" method="get">
                            <button class="edit-btn" type="submit">Edit Client</button>
                         </form>
-                     </div> 
-                     <div>
-                     <a href="/user/{{user._id}}/edit-client">Edit Client</a>
-                     </div>
+                     
                     <div class="log-out">
                      <a href="/auth/logout">Log Out</a>
                     </div>
@@ -52,21 +49,22 @@
 
 <h1>{{clientDetails.name}}</h1>
 
+<div class="container">
 
-<div class="color-palette-box">
 
-   <div>
+   <div class="color-palette-box">
       <h3>Color Palette</h3>
+      <div class="color-circles">
 
       {{#each clientDetails.colorPalette}}
 
          <div style=" border: solid 1px black; background-color:#{{this}}; width: 50px; height: 50px; border-radius: 50%;"></div>
       
       {{/each}}
+      </div>
 
       <a class="underline-btn"href="/client/{{clientDetails._id}}/client-color">View Details</a>
 
    </div>
-
 
 </div>

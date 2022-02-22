@@ -15,32 +15,13 @@ body {
 }
 
 
-
-/* Font Styles */
-
-/* a {
-  background-color:#8D6F57;
-  border: solid 2px #8D6F57;
-  color: white;
-  text-decoration: none;
-  font-size: 1.5em;
-  border-radius: 25px;
-  padding: 10px 30px;
-} */
-
-a:hover {
-  color: #8D6F57;
-  border: solid 2px #8D6F57;
-  background-color: transparent;
-  
-}
-
 h1 {
   font-family: 'nimbus-sans-extended';
   font-weight: 900;
   font-size: 3em;
   color: #8D6F57;
 }
+
 
 
 
@@ -62,7 +43,7 @@ li {
   flex-direction: row-reverse;
 }
 
-/* Form Styles */
+/*  Sign Up / Login / Client Edit Form Styles */
 .container {
   width: 90vw;
   height: 80vh;
@@ -130,7 +111,7 @@ form button:hover {
 }
 
 
-/* Hamburger Nav Styles */
+/* ------------- HAMBURGER NAVIGATION -------------- */
 
 .nav-container {
 	width: 100%;
@@ -149,7 +130,7 @@ form button:hover {
 	background: none;
 	outline: none;
 	border: none;
-    z-index: 100;
+  z-index: 100;
 }
 
 .hamburger .bar, .hamburger:after, .hamburger:before {
@@ -206,6 +187,7 @@ form button:hover {
 	text-decoration: none;
   border: solid 3px white;
   border-radius: 25px;
+  font-size: 1.5em;
 }
 
 .hamburger-nav a:hover {
@@ -220,42 +202,64 @@ form button:hover {
   height: 70vh;
 }
 
-.nav-form {
-  width: 200px;
+/* Nav Form Styles */
+
+#nav-form {
+  background-color: black;
+  margin: 10%;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
 }
 
-.nav-form input {
-  border: solid 3px white;
+#nav-form h3 {
   color: white;
+}
+
+#nav-form input {
+  color: white;
+  border: none;
+  border-radius: 0px;
+  border-bottom: solid 3px white;
   width: 200px;
 }
 
-.nav-form label {
+#nav-form ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color:white;
+  opacity: 1; /* Firefox */
+}
 
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
   color: white;
 }
 
-.nav-form button {
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: white;
+}
 
+#nav-form label {
+
+  color: white;
+  padding-bottom: 5px;
+
+}
+
+#nav-form button {
   border: solid 3px white;
-  color: white;
+  background-color: transparent;
+}
+
+#nav-form button:hover{
+  border: solid 3px white;
+  background-color: white;
+  color: #8D6F57;
 
 }
 
-.color-palette-form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.color-palette-form button {
-  width: 30px;
-}
-
+/* -------------- CLIENT COLOR PALETTE DETAILS PAGE -------------- */
 
 /* color palette styling */
 
@@ -275,6 +279,8 @@ form button:hover {
 .color img {
   margin-bottom: 10px;
 }
+
+/* --------------- COLOR PALETTE GENERATOR PAGE --------------- */
 
 
 /* Color Picker */
@@ -329,6 +335,8 @@ input[type="radio"] {
 
 }
 
+/* Color Palette Display */
+
 .palette-container {
   display: flex;
   flex-direction: column;
@@ -347,13 +355,30 @@ input[type="radio"] {
   display: flex;
 }
 
-/* Client Page */
+/* ---------------------- CLIENT PAGE -------------------- */
 
 .color-palette-box {
   border: solid 3px #8D6F57;
+  width: 40vw;
+  height: 30vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
 }
 
-/* Client List */
+.color-circles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 30px;
+}
+
+
+/* ---------------------- CLIENT LIST PAGE ---------------- */
 
 .client-row {
   display: flex;

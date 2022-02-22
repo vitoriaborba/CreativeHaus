@@ -234,10 +234,14 @@ p {
 
 
 /* Color Picker */
+.color-palette-container{
+  display: flex;
+  flex-direction: column;
+}
 
 .color-palette-title {
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .color-picker {
@@ -434,4 +438,48 @@ margin-top: 10px;
   border-bottom: solid 2px red;
 }
 
+/* Animation */
 
+
+.loader {
+  position: relative;
+  -webkit-box-reflect: below -28px linear-gradient(transparent, rgba(152, 219, 235, 0.212));
+  
+}
+@keyframes blinkCursor {
+  0%, 75%
+  {
+    opacity: 1;
+  }
+  76%, 100%
+  {
+    opacity: 1;
+  }
+
+
+}
+.loader h2 {
+  position: relative;
+  color: rgb(40, 146, 150);
+  letter-spacing: 5px;
+  font-size: 4em;
+  text-transform: uppercase;
+  animation: typing 6s steps(12) infinite;
+  overflow: hidden;
+  text-align: center;
+}
+@keyframes typing {
+  0%,90%,100%
+  {
+    width: 0;
+  }
+  30%,60%
+  {
+    width: 734.3px;
+  }
+}
+.animate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

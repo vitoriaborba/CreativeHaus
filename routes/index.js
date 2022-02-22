@@ -9,12 +9,13 @@ router.get("/", (req, res, next) => {
   res.render("index");
 });
 
-module.exports = router;
-
+// Render color palette page 
 
 router.get("/color-palette", (req, res, next) => {
 res.render("color-palette");
 })
+
+// Generate a color palette
 
 router.post("/color-palette-select", async (req, res, next) => {
   const colorhex = req.body.colorhex.split('#')[1]
@@ -47,3 +48,5 @@ router.post("/color-palette-select", async (req, res, next) => {
   }
 })
 
+
+module.exports = router;

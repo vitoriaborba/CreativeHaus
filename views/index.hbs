@@ -1,5 +1,33 @@
+
+<header>
+         <div class="nav-bar">
+            <h3>BrandLogo</h3>
+		<div class="nav-container">
+            <nav class="hamburger-nav">
+               <div class="nav">
+                  <div class="nav-btns">
+                     {{#unless user}}
+                     <a href="/auth/signup">Sign Up</a>
+                     <a href="/auth/login">Login</a>
+                     {{/unless}}
+                     {{#if user}}
+                     <a href="/user/user-home">User profile</a>
+                  </div>
+                  <div class="log-out">
+                     <a href="/auth/logout">Log Out</a>
+                  </div>
+                  {{/if}}
+                </div>
+            </nav>
+			<button class="hamburger">
+				<div class="bar"></div>
+			</button>
+		</div>
+      </div>
+	</header>
+
 <div class="container">
-<h1>Vitorias Cool Animation</h1>
-<a href="/color-palette">Generate Color Palette</a>
+    <h1>Vitorias Cool Animation</h1>
+    <a href="/color-palette">Generate Color Palette</a>
 </div>
 

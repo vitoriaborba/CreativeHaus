@@ -57,6 +57,11 @@ li {
   list-style: none;
 }
 
+.nav-bar {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
 /* Form Styles */
 .container {
   width: 90vw;
@@ -215,6 +220,43 @@ form button:hover {
   height: 70vh;
 }
 
+.nav-form {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-form input {
+  border: solid 3px white;
+  color: white;
+  width: 200px;
+}
+
+.nav-form label {
+
+  color: white;
+}
+
+.nav-form button {
+
+  border: solid 3px white;
+  color: white;
+
+}
+
+.color-palette-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.color-palette-form button {
+  width: 30px;
+}
+
+
 /* color palette styling */
 
 .color-container {
@@ -304,3 +346,10 @@ input[type="radio"] {
 .color-container {
   display: flex;
 }
+
+/* Client Page */
+
+.color-palette-box {
+  border: solid 3px #8D6F57;
+}
+

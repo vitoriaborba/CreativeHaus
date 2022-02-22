@@ -1,23 +1,68 @@
 
+
+
+
+<header>
+         <div class="nav-bar">
+            <h3>BrandLogo</h3>
+		<div class="nav-container">
+            <nav class="hamburger-nav">
+               <div class="nav">
+                  <div class="nav-btns">
+                     <a href="/user/client-list">Back</a>
+                     <div class="nav-form">
+                         <div class="color-palette-form">
+                         <form action="/client/{{clientDetails._id}}/new-color" method="post">
+                        <label>Add Color#
+                              <input type="text" name="color">
+                        </label>
+                           <button type="submit">+</button>
+                        </form>
+                        </div>
+
+
+                        <form action="/client/new-font" method="post">
+                        <label> Add Font </label>
+                              <input type="text" name="font">
+                           <button type="submit">+</button>
+                        </form>
+                        <form action="/client/{{clientDetails._id}}/delete" method="post">
+                           <button class="delete-btn" type="submit">Delete Client</button>
+                        </form>
+                        <form action="/user/{{clientDetails._id}}/edit-client" method="get">
+                           <button class="edit-btn" type="submit">Edit Client</button>
+                        </form>
+                     </div>
+                    <div class="log-out">
+                     <a href="/auth/logout">Log Out</a>
+                    </div>
+                </div>
+               </div>
+            </nav>
+			<button class="hamburger">
+				<div class="bar"></div>
+			</button>
+		</div>
+      </div>
+	</header>
+
+
 <h1>{{clientDetails.name}}</h1>
 
-<form action="/client/{{clientDetails._id}}/new-color" method="post">
- <label> Add Color
-      <input type="text" name="color">
-   </label>
-   <button type="submit">+</button>
-</form>
 
+<div class="color-palette-box">
 
-<form action="/client/new-font" method="post">
- <label> Add Font
-      <input type="text" name="font">
-   </label>
-   <button type="submit">+</button>
-</form>
-<form action="/client/{{clientDetails._id}}/delete" method="post">
-   <button class="delete-btn" type="submit">Delete Client</button>
-</form>
-<form action="/user/{{clientDetails._id}}/edit-client" method="get">
-   <button class="edit-btn" type="submit">Edit Client</button>
-</form>
+   <div>
+      <h3>Color Palette</h3>
+
+      {{#each clientDetails.colorPalette}}
+
+         <div style=" border: solid 1px black; background-color:#{{this}}; width: 50px; height: 50px; border-radius: 50%;"></div>
+      
+      {{/each}}
+
+      <a class="underline-btn"href="/client/{{clientDetails._id}}/client-color">View Details</a>
+
+   </div>
+
+</div>

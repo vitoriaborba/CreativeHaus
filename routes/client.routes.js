@@ -21,6 +21,7 @@ router.get("/:id/client-page", isLoggedIn, (req, res, next) =>{
     console.log(id)
     Client.findById(id)
     .then((dbclient)=>{
+        console.log(dbclient)
         res.render("client/client-page", {clientDetails: dbclient})
         
     })
@@ -38,8 +39,6 @@ router.get("/:id/client-color", isLoggedIn, async (req, res, next) => {
         id: clientId,
         colorInfo: [],
     }
-
-    // let colorInfo = [];
 
     const foundClient = await Client.findById(id);
 
@@ -65,7 +64,6 @@ console.log(err)
 
 })
 
-    // res.render("client/client-color", {client: foundClient, colorInfo: apiData.data})
 
 router.post("/:id/new-color", isLoggedIn, (req, res, next) => {
 
@@ -77,12 +75,14 @@ router.post("/:id/new-color", isLoggedIn, (req, res, next) => {
 
         console.log(updatedClient)
     
-        res.redirect(`/client/${id}/client-color`)
+        res.redirect(`/client/${id}/client-page`)
 
     })
 
     .catch((err) => next((err)))
 });
+
+// Delete a color
 
     
 
@@ -107,6 +107,63 @@ router.post("/:id/new-color", isLoggedIn, (req, res, next) => {
         }) 
         .catch((err) => next(err));
     })
+
+
+
+//     // // Add New FONT
+
+// router.get("/:id/client-font", isLoggedIn, async (req, res, next) => {
+//     const clientId = req.params.id;
+
+//     try {
+//     const {id} = req.params;
+ 
+//     let clientFont = {
+//         id: clientId,
+//         fontInfo: [],
+//     }
+
+//     const foundClient = await Client.findById(id);
+
+
+//     Promise.all(foundClient.fontSuite.map(async(font) => {
+
+//       let fontData = await axios.get(`https://www.googleapis.com/webfonts/v1/webfonts?key=${GOOGLE_KEY}`)
+//         clientFont.fontInfo.push(fontData.data)
+//         return clientFont;
+//     }))
+
+//     .then(() =>{
+//       res.render("client/client-fonts", {clientFont})  
+
+//   })
+// }
+
+// catch(err) {
+
+// console.log(err)
+
+// }
+
+// })
+
+
+// router.post("/:id/new-font", isLoggedIn, (req, res, next) => {
+
+//     const {id} = req.params;
+//     const {font} = req.body;
+    
+//     Client.findByIdAndUpdate(id, {$push: {fontSuite: font}})
+//     .then((updatedClient)=> {
+
+//         console.log(updatedClient)
+    
+//         res.redirect(`/client/${id}/client-page`)
+
+//     })
+
+//     .catch((err) => next((err)))
+// });
        
 
 

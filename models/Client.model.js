@@ -16,6 +16,9 @@ const clientSchema = new Schema(
   },
   colorPalette: {
     type: Array,
+  },
+  fontSuite: {
+    type: Array,
   }
 });
 const Client = model("Client", clientSchema);

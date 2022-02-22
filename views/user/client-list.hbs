@@ -1,8 +1,44 @@
+<header>
+         <div class="nav-bar">
+            <h3>BrandLogo</h3>
+		<div class="nav-container">
+            <nav class="hamburger-nav">
+               <div class="nav">
+                  <div class="nav-btns">
+                     <div>
+                         <a href="/user/user-home">back</a>
+                        <form class= "nav-form" action="/user/add-client" method="POST">
+                        <label> Name
+                            <input type="text" name="name">
+                        </label>
+                        <label> Email
+                            <input type="email" name="email">
+                        </label>
+                        <button type="submit">Submit</button>
+                        </form>
+
+                        {{#if errorMessage}}
+                        {{errorMessage}}
+                        {{/if}}
+
+                     </div>
+                    <div class="log-out">
+                     <a href="/auth/logout">Log Out</a>
+                    </div>
+                </div>
+               </div>
+            </nav>
+			<button class="hamburger">
+				<div class="bar"></div>
+			</button>
+		</div>
+      </div>
+	</header>
+
+
 <div class="container">
 
 <h1>Client list</h1>
-<a href="/user/user-home">back</a>
-<a href="/user/add-client">New Client</a>
 
 {{#each clients}}
 <a href="/client/{{_id}}/client-page">{{name}}</a>

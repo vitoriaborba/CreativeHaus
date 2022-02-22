@@ -1,7 +1,29 @@
+
+<header>
+         <div class="nav-bar">
+            <h3>BrandLogo</h3>
+		<div class="nav-container">
+            <nav class="hamburger-nav">
+               <div class="nav">
+                  <div class="nav-btns">
+                     <div>
+                         <a href="/user/client-list">Clients</a>
+                     </div>
+                    <div class="log-out">
+                     <a href="/auth/logout">Log Out</a>
+                    </div>
+                </div>
+               </div>
+            </nav>
+			<button class="hamburger">
+				<div class="bar"></div>
+			</button>
+		</div>
+      </div>
+	</header>
+
 <div class="container">
 
-<p>Welcome User!</p> <br>
-
-<a href="/user/client-list">Clients</a>
+<p>Welcome {{user.username}}!</p> <br>
 
 </div>

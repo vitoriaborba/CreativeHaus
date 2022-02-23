@@ -40,9 +40,21 @@ body {
   font-size: 1.4em;
   margin: 20px 10px;
 }
-
+.btn-color {
+  border: solid 2px whitesmoke;
+  color: whitesmoke;
+  text-decoration: none;
+  padding: 10px 30px;
+  border-radius: 25px;
+  font-size: 1.4em;
+  margin: 30px 10px;
+}
 
 .btn:hover {
+  background-color: whitesmoke;
+  color: black;
+}
+.btn-color:hover {
   background-color: whitesmoke;
   color: black;
 }
@@ -584,53 +596,3 @@ margin-top: 10px;
   border-bottom: solid 2px red;
 }
 
-/* Animation */
-
-
-.loader {
-  position: relative;
-  -webkit-box-reflect: below -25px linear-gradient(transparent, rgba(152, 219, 235, 0.212));
-  
-}
-@keyframes blinkCursor {
-  0%, 75%
-  {
-    opacity: 1;
-  }
-  76%, 100%
-  {
-    opacity: 1;
-  }
-
-
-}
-.loader h2 {
-  position: relative;
-  color: rgb(40, 146, 150);
-  letter-spacing: 5px;
-  font-size: 3.8em;
-  font-weight: 900;
-  color: #18B115;
-  letter-spacing: 0.15em;
-  font-size: 3em;
-  font-family: 'nimbus-sans-extended';
-  text-transform: uppercase;
-  animation: typing 6s steps(12) infinite;
-  overflow: hidden;
-  text-align: center;
-}
-@keyframes typing {
-  0%,90%,100%
-  {
-    width: 0;
-  }
-  30%,60%
-  {
-    width: 734.3px;
-  }
-}
-.animate {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}

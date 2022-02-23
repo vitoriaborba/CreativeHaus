@@ -246,10 +246,11 @@ p {
 
 .color-picker {
 
-width: 34px;
-height: 35px;
+width: 35px;
+height: 37px;
 padding: 0;
 border: none;
+background-color: transparent;
 border-radius: 100px;
 margin-bottom: 0;
 
@@ -460,9 +461,9 @@ margin-top: 10px;
 }
 .loader h2 {
   position: relative;
-  color: rgb(40, 146, 150);
-  letter-spacing: 5px;
-  font-size: 4em;
+  color: #18B115;
+  letter-spacing: 0.15em;
+  font-size: 3em;
   font-family: 'nimbus-sans-extended';
   text-transform: uppercase;
   animation: typing 6s steps(12) infinite;

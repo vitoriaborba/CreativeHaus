@@ -463,6 +463,7 @@ margin-top: 10px;
   color: rgb(40, 146, 150);
   letter-spacing: 5px;
   font-size: 4em;
+  font-family: 'nimbus-sans-extended';
   text-transform: uppercase;
   animation: typing 6s steps(12) infinite;
   overflow: hidden;

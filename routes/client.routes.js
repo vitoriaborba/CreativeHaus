@@ -20,11 +20,22 @@ router.get("/:id/client-page", isLoggedIn, (req, res, next) =>{
     const {id} = req.params;
     console.log(id)
     Client.findById(id)
-    .then((dbclient)=>{
+    .then( async (dbclient)=>{
         console.log(dbclient)
-        res.render("client/client-page", {clientDetails: dbclient})
+        let fontData = await axios.get(`https://www.googleapis.com/webfonts/v1/webfonts?key=${process.env.GOOGLE_KEY}`);
+        console.log(fontData.data.items)
+        res.render("client/client-page", {clientDetails: dbclient, fontInfo: fontData.data.items, jsonData: encodeURIComponent(JSON.stringify(fontData.data.items))})
         
     })
+})
+
+// Create Client Font Page
+
+router.get("/client/:id/client-fonts", isLoggedIn, (req, res, next) => {
+
+    res.render('client/client-fonts')
+
+
 })
 
 // // Add New Color 
@@ -112,62 +123,27 @@ router.post("/:id/new-color", isLoggedIn, (req, res, next) => {
 
 
 
-//     // // Add New FONT
+ // Add New FONT
 
-// router.get("/:id/client-font", isLoggedIn, async (req, res, next) => {
-//     const clientId = req.params.id;
+    router.post("/:id/new-font", isLoggedIn, async (req, res, next) => {
+        const clientId = req.params.id;
+        const {fontVar, fontName, fontOption} = req.body
+        let newFont = {family: fontName, option: fontOption, variant: fontVar}
 
-//     try {
-//     const {id} = req.params;
- 
-//     let clientFont = {
-//         id: clientId,
-//         fontInfo: [],
-//     }
+        console.log(req.body)
+        
+        Client.findByIdAndUpdate(clientId, {$push: {fontSuite: newFont}}, {new: true})
+        .then((updatedFonts) => {
+            
+            console.log(updatedFonts)
 
-//     const foundClient = await Client.findById(id);
+        res.render(`/client/client-page`,{clientFonts:updatedFonts} )
 
+        })
+        .catch(err => next(err))
 
-//     Promise.all(foundClient.fontSuite.map(async(font) => {
-
-//       let fontData = await axios.get(`https://www.googleapis.com/webfonts/v1/webfonts?key=${GOOGLE_KEY}`)
-//         clientFont.fontInfo.push(fontData.data)
-//         return clientFont;
-//     }))
-
-//     .then(() =>{
-//       res.render("client/client-fonts", {clientFont})  
-
-//   })
-// }
-
-// catch(err) {
-
-// console.log(err)
-
-// }
-
-// })
-
-
-// router.post("/:id/new-font", isLoggedIn, (req, res, next) => {
-
-//     const {id} = req.params;
-//     const {font} = req.body;
-    
-//     Client.findByIdAndUpdate(id, {$push: {fontSuite: font}})
-//     .then((updatedClient)=> {
-
-//         console.log(updatedClient)
-    
-//         res.redirect(`/client/${id}/client-page`)
-
-//     })
-
-//     .catch((err) => next((err)))
-// });
+    })
        
-
 
 
     module.exports = router;

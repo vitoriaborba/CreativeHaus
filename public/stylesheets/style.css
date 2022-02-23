@@ -12,7 +12,7 @@ body {
   font-family: 'montserrat';
   font-weight:600;
   margin: 50px;
-  background-color: black;
+  background-color: rgb(19, 18, 18);
 }
 
 
@@ -135,7 +135,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  margin: 20px;
+  margin: 0px 20px 20px 20px;
   padding: 20px;
 
 }
@@ -228,6 +228,27 @@ h1 {
   font-size: 5em;
   color: whitesmoke;
 }
+
+h2 {
+  color: white;
+  font-size: 3.5em;
+}
+
+h3 {
+  color: white;
+}
+
+h4 {
+  color: white;
+  font-size: 1.3em;
+}
+
+h5 {
+  color:white;
+  font-size: 2em;
+}
+
+
 
 p {
   color: white;
@@ -345,9 +366,20 @@ input[type="radio"] {
 
 /* ---------------------- CLIENT PAGE -------------------- */
 
+.box-row {
+  display:flex;
+  justify-self: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.box-row > div {
+  width: 50%;
+}
+
 .color-palette-box {
   border: solid 3px whitesmoke;
-  padding: 35px 20px 20px 20px;
+  padding: 40px 20px 20px 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -355,6 +387,7 @@ input[type="radio"] {
   border-radius: 30px;
   color: whitesmoke;
   margin: 30px;
+  min-height: 40vh;
 }
 
 .color-palette-box h3 {
@@ -366,7 +399,34 @@ input[type="radio"] {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  margin: 30px;
+  margin: 25px 30px 10px 30px;
+}
+
+.font-box {
+  border: solid 3px whitesmoke;
+  padding: 35px 20px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  color: whitesmoke;
+  margin: 0px 60px;
+  min-height: 40vh;
+}
+
+.font-box h3 {
+  font-size: 2em;
+}
+
+.font-display {
+  margin: 20px;
+}
+
+
+.font-display h2 {
+  margin-bottom: 10px;
+  margin-top: 5px;
 }
 
 
@@ -446,6 +506,53 @@ font-weight: bold;
   border-radius: 30px;
   padding: 5px 5px 5px 20px;
 }
+
+/* Font Form */
+
+.font-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+
+}
+
+.add-font select {
+  background-color: transparent;
+  color: whitesmoke;
+  border:none;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  max-width: 200px;
+  overflow-x: hidden;
+}
+
+.add-font {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 2px whitesmoke;
+  border-radius: 30px;
+  padding: 10px 10px 10px 20px;
+  margin-bottom: 10px;
+}
+
+.font-radio-btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1em;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+.font-radio-btns .middle {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 
 /* Edit and Delete Buttons */
 

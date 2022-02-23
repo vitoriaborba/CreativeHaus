@@ -4,7 +4,6 @@
 
 <header>
          <div class="nav-bar">
-            <h3 id="logo">BrandLogo</h3>
 		<div class="nav-container">
             <nav class="hamburger-nav">
                <div class="nav">
@@ -18,12 +17,38 @@
                               </div>
                            </form>
                         </div>
-
-                      {{!--   <form action="/client/new-font" method="post">
-                        <label> Add Font </label>
-                              <input type="text" name="font">
-                           <button type="submit">+</button>
-                        </form> --}}
+                        <div class="font-form">
+                           <p>Add Font</p>
+                           <form class="nav-form" action="/client/{{clientDetails._id}}/new-font" method="post">
+                              <div class="add-font">
+                                 <select name="fontName" id="selected-font" onChange="checkFont()">
+                                       {{#each fontInfo}}
+                                          <option name="fontName" value="{{this.family}}">{{this.family}}</option>
+                                       {{/each}}
+                                 </select>
+                                 </div>
+                                 <div class="add-font">
+                                 <select id="selected-variants" name="fontVar">
+                                     
+                                       {{#each fontInfo.0.variants}}
+                                          <option name="fontVar" value="{{this}}">{{this}}</option> 
+                                       {{/each}}
+                                 </select>
+                              </div>
+                              <div class="font-radio-btns">
+                                 <label for="header"> Header
+                                       <input type="radio" name="fontOption" id="header" value="header">
+                                 </label>
+                                 <label class="middle"for="subheader"> Subheader
+                                       <input type="radio" name="fontOption" id="subheader" value="subheader">
+                                 </label>
+                                 <label for="body"> Body
+                                       <input type="radio" name="fontOption" id="body" value="body">
+                                 </label>
+                              </div>
+                              <button id="form-btn-center" type="submit">Add Font</button>
+                           </form>
+                        </div>
                      
                     <div class="log-out">
                      <a href="/auth/logout">Log Out</a>
@@ -33,6 +58,7 @@
 				<div class="bar"></div>
 			</button>
 		</div>
+      <img id="logo" src="/images/CreativeHaus-Logo-White-Small.png">
       </div>
 	</header>
 
@@ -41,30 +67,81 @@
 
 <div class="container">
 
-   <h1>{{clientDetails.name}}</h1>
+   
 
-   <div class="color-palette-box">
-      <h3>Color Palette</h3>
-      <div class="color-circles">
+      <h1>{{clientDetails.name}}</h1>
 
-      {{#each clientDetails.colorPalette}}
+      <div class="box-row">
 
-         <div style="background-color:#{{this}}; width: 70px; height: 70px; border-radius: 50%; margin: 0px 10px;"></div>
-      
-      {{/each}}
+         <div class="color-palette-box">
+            <h3>Color Palette</h3>
+            <div class="color-circles">
+
+            {{#each clientDetails.colorPalette}}
+
+               <div style="background-color:#{{this}}; width: 70px; height: 70px; border-radius: 50%; margin: 10px;"></div>
+            
+            {{/each}}
+            </div>
+
+            <a class="btn"href="/client/{{clientDetails._id}}/client-color">View Details</a>
+
+         </div>
+
+         <div class="font-box">
+            <h3>Font Suite</h3>
+            <div class="font-display">
+               <h4 value="subheader">
+               <style>@import url('https://fonts.googleapis.com/css2?family={{fontNameSub}}:ital,wght@{{fontVarSub}}&display=swap');</style>
+               Subheader
+               </h4>
+               <h2 value="header"> 
+               <style>@import url('https://fonts.googleapis.com/css2?family={{fontNameHead}}:ital,wght@{{fontVarHead}}&display=swap');</style>
+               Header
+               </h2>
+               <p value="body">
+               <style>@import url('https://fonts.googleapis.com/css2?family={{fontNameBody}}:ital,wght@{{fontVarBody}}&display=swap');</style>
+               Tacos shabby chic iceland, listicle fanny pack typewriter woke lomo helvetica tbh readymade master cleanse letterpress. Hexagon actually viral ethical organic iPhone keffiyeh before they sold out meditation.
+               </p>
+            </div>
+
+            <a class="btn"href="/client/{{clientDetails._id}}/client-fonts">View Details</a>
+
+         </div>
       </div>
 
-      <a class="btn"href="/client/{{clientDetails._id}}/client-color">View Details</a>
+         <div class="client-btns">
+               <form action="/client/{{clientDetails._id}}/delete" method="post">
+                     <button id="form-btn" class="delete"type="submit">Delete Client</button>
+               </form>
+               <form action="/user/{{clientDetails._id}}/edit-client" method="get">
+                     <button id="form-btn" type="submit">Edit Client</button>
+               </form>
+         </div>
 
-   </div>
-
-      <div class="client-btns">
-            <form action="/client/{{clientDetails._id}}/delete" method="post">
-                  <button id="form-btn" class="delete"type="submit">Delete Client</button>
-            </form>
-            <form action="/user/{{clientDetails._id}}/edit-client" method="get">
-                  <button id="form-btn" type="submit">Edit Client</button>
-            </form>
-      </div>
+   
 
 </div>
+
+<script>
+  function checkFont(){
+
+let decodedJson = decodeURIComponent("{{{jsonData}}}");
+let fontsArray = JSON.parse(decodedJson);
+
+let selectInput = document.getElementById('selected-font')
+let selectedFont = selectInput.options[selectInput.selectedIndex].value
+
+let chosenFontIndex = fontsArray.indexOf(fontsArray.find(font => font.family === selectedFont))
+
+let selectedVariantsInput = document.getElementById('selected-variants');
+let selectedVariants = fontsArray[chosenFontIndex].variants
+
+let variantsToDisplay = "";
+selectedVariants.forEach(variant => {
+   variantsToDisplay += ` <option name="fontVar" value="${variant}">${variant}</option> `
+})
+ selectedVariantsInput.innerHTML = variantsToDisplay;
+  }
+
+</script>

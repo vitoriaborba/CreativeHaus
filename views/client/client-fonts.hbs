@@ -1,4 +1,3 @@
-
 <header>
          <div class="nav-bar">
 		<div class="nav-container">
@@ -22,24 +21,21 @@
       </div>
 	</header>
 
-<div class="container">
+<h1>Font Suite</h1>
 
-<h1>Color palette</h1>
+<h4>Header/Subheader/Body</h4>
+<h2>Font Name</h2>
 
-<div class="color-container">
-{{#each clientColor.colorInfo}}
-<div class="color">
-<img src="{{this.image.bare}}" alt="">
-<h3>{{this.name.value}}</h3>
-<p>{{this.hex.value}}</p>
-<p>{{this.rgb.value}}</p>
-<p>{{this.hsl.value}}</p>
-<p>{{this.cmyk.value}}</p>
-<form action="/client/{{../clientColor.id}}/{{this.hex.clean}}/delete" method="post">
-   <button id="delete-btn" type="submit">Delete</button>
+<h5>Font Styling</h5>
+<form action="/client/client-fonts/edit-styles">
+    <label for="case">Case:
+        <input name="case"type="text">
+    </label>
+    <label for="letter-spacing">Letter spacing:
+        <input name="letter-spacing" type="text">
+    </label>
+    <label for="color-use">Color use:
+        <input name="color-use" type="text">
+    </label>
+    <button type="submit">Edit Styles</button>
 </form>
-</div>
-{{/each}}
-</div>
-
-</div>

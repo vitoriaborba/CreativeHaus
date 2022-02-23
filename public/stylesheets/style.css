@@ -123,7 +123,10 @@ body {
 
 .form-box {
   height: 20vh;
-  width: 20vh;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .nav-form {
@@ -133,6 +136,7 @@ body {
   justify-content: center;
   align-items: flex-start;
   margin: 20px;
+  padding: 20px;
 
 }
 
@@ -143,7 +147,28 @@ body {
   border-bottom: solid 2px white;
   margin-bottom: 20px;
   padding-bottom: 5px;
+  width: 100%;
 
+}
+
+#form-btn-center {
+  border: solid 2px whitesmoke;
+  color: whitesmoke;
+  text-decoration: none;
+  padding: 12px 40px;
+  border-radius: 25px;
+  font-size: 1.4em;
+  margin:10px auto;
+  background-color: transparent;
+  font-family: montserrat;
+
+
+
+}
+
+#form-btn-center:hover {
+  background-color: whitesmoke;
+  color: black;
 }
 
 
@@ -375,11 +400,24 @@ color: whitesmoke;
 
 /* Add Color Form */
 
+.color-palette-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.color-palette-form:first-child {
+
+  justify-self: start;
+
+}
+
 #round-btn {
 border-radius: 50%;
 background-color:turquoise;
 color: black;
-width: 30px;
+width: 35px;
 height: 30px;
 border: none;
 font-size: 1.5em;

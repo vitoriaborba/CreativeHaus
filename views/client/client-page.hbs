@@ -8,19 +8,16 @@
 		<div class="nav-container">
             <nav class="hamburger-nav">
                <div class="nav">
-                  <div class="nav-btns">
                      <a id="back-btn" href="/user/client-list">&#171 back</a>
-                     <div>
                          <div class="color-palette-form">
-                            <p>Add Color</p>
-                         <form class="nav-form" action="/client/{{clientDetails._id}}/new-color" method="post">
-                           <div class="add-color">
-                                 <input type="text" name="color" placeholder="HEX #">
-                                 <button id="round-btn" type="submit">+</button>
-                           </div>
-                        </form>
+                           <p>Add Color</p>
+                           <form class="nav-form" action="/client/{{clientDetails._id}}/new-color" method="post">
+                              <div class="add-color">
+                                    <input type="text" name="color" placeholder="HEX #">
+                                    <button id="round-btn" type="submit">+</button>
+                              </div>
+                           </form>
                         </div>
-                     </div> 
 
                       {{!--   <form action="/client/new-font" method="post">
                         <label> Add Font </label>
@@ -31,8 +28,6 @@
                     <div class="log-out">
                      <a href="/auth/logout">Log Out</a>
                     </div>
-                </div>
-               </div>
             </nav>
 			<button class="hamburger">
 				<div class="bar"></div>

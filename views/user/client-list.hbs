@@ -4,27 +4,22 @@
 		<div class="nav-container">
             <nav class="hamburger-nav">
                <div class="nav">
-                  <div class="nav-btns">
-                        <div id="nav-with-form">
                             <a id="back-btn" href="/user/user-home">&#171 back</a>
                                 <div class='form-box'>
                                     <form class="nav-form" action="/user/add-client" enctype="multipart/form-data"  method="POST">
                                         <input type="text" name="name" placeholder="Client Name">
                                         <input type="email" name="email" placeholder="Email">
                                     <input type="file" name="image" class="form-control-file" placeholder="Client Logo" />
-                                    <button id="form-btn" type="submit">Add New Client</button>
+                                    <button id="form-btn-center" type="submit">Add New Client</button>
                                     </form>
                                 </div>
                             {{#if errorMessage}}
                             {{errorMessage}}
                             {{/if}}
 
-                        </div>
                         <div class="log-out">
                         <a href="/auth/logout">Log Out</a>
                         </div>
-                    
-                    </div>
                </div>
             </nav>
 			<button class="hamburger">

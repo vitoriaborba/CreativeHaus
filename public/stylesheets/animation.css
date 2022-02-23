@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@600&display=swap');
+
+/* DEMO-SPECIFIC STYLES */
+.typewriter h1 {
+  color: whitesmoke;
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  text-align: center;
+  font-weight: lighter;
+
+}
+.typewriter h1:nth-child(1){
+  width: 500px;
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  -webkit-animation: 
+    typing 2.5s steps(30, end),
+    blink-caret .5s step-end infinite;
+          animation: 
+    typing 2.5s steps(30, end),
+    blink-caret .5s step-end infinite;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+.typewriter h1:nth-child(2) {
+  width: 777.76;
+  opacity: 0;
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  -webkit-animation: 
+    typing2 2.5s steps(30, end),
+    blink-caret .5s step-end infinite;
+          animation: 
+    typing2 2.5s steps(30, end),
+    blink-caret .5s step-end infinite;
+    -webkit-animation-delay: 3s;
+    animation-delay: 3s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+.typewriter h1:nth-child(3) {
+  width: 348.33;
+  opacity: 0;
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  -webkit-box-reflect: below -28px linear-gradient(transparent, rgba(255, 255, 255, 0.212));
+  -webkit-animation: 
+    typing4 3s steps(30, end),
+    blink-caret .5s step-end infinite;
+          animation: 
+    typing4 3s steps(30, end),
+    blink-caret .5s step-end infinite;
+    -webkit-animation-delay: 5.7s;
+    animation-delay: 5.7s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+/* The typing effect */
+@-webkit-keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+  0% {
+    width: 0;
+  }
+  99.9% {
+    border-right: .15em solid orange;
+  }
+  100% {
+    border: none;
+  }
+}
+
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+  0% {
+    width: 0;
+  }
+  99.9% {
+    border-right: .15em solid orange;
+  }
+  100% {
+    border: none;
+  }
+}
+
+@-webkit-keyframes typing2 {
+  from { width: 0 }
+  to { width: 100% }
+  0% {
+    width: 0;
+  } 
+  1% {
+    opacity: 1;
+  }
+   99.9% {
+    border-right: .15em solid orange;
+  }
+  100% {
+    opacity: 1;
+    border-right: none;
+    border: none;
+  }
+}
+@keyframes typing2 {
+  from { width: 0 }
+  to { width: 100% }
+  0% {
+    width: 0;
+  } 
+  1% {
+    opacity: 1;
+  }
+   99.9% {
+    border-right: .15em solid orange;
+  }
+  100% {
+    opacity: 1;
+    border-right: none;
+    border: none;
+  }
+}
+
+@-webkit-keyframes typing4 {
+  from { width: 0 }
+  to { width: 100% } 
+  0% {
+    width: 0;
+  } 
+  1% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    border-right: none;
+    border: none;
+  }
+}
+@keyframes typing4 {
+  from { width: 0 }
+  to { width: 100% } 
+  0% {
+    width: 0;
+  } 
+  1% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    border-right: none;
+    border: none;
+  }
+}
+/* The typewriter cursor effect */
+@-webkit-keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: rgb(8, 138, 51) }
+}
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: rgb(8, 138, 51) }
+}
+
+/* color pallete */
+.animate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.loader h1 {
+  border-right: .15em solid rgb(8, 138, 51); /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  font-family: 'Noto Serif Display', serif;
+  
+
+
+}
+.loader h1:nth-child(1){
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  color: rgb(206, 206, 206);
+  -webkit-animation: 
+    type 2s steps(30, end),
+    blink-caret .4s step-end infinite;
+          animation: 
+    type 2s steps(30, end),
+    blink-caret .4s step-end infinite;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes type {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+
+@keyframes type {
+  from { width: 0 }
+  to { width: 100% }
+
+}
+
+.blue {
+  color: rgb(35, 111, 155);
+  font-family: 'Noto Serif Display', serif;
+
+}
+.rainbow  {
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 6.5em;
+
+}
+.gray  {
+  font-family: 'Noto Serif Display', serif;
+
+}
+
+.color-font {
+  font-family: 'Montserrat', sans-serif;
+  
+}
+.centered-box-color {
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  margin-top: 20px;
+}

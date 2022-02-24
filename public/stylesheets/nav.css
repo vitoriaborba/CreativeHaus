@@ -12,6 +12,7 @@
 	padding-right: 10px;
 	display: flex;
 	justify-content:space-between;
+	align-items: center;
 
 }
 
@@ -131,4 +132,10 @@
 
 .margin-top {
 	margin-top: 30px;
+}
+
+.logo-container {
+	display:flex;
+	justify-content: space-between;
+	align-items: center;
 }

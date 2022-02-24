@@ -51,7 +51,7 @@ router.get("/:id/client-fonts", isLoggedIn, (req, res, next) => {
         dbClient.fontSuite = fontData;
     
 
-    res.render('client/client-fonts', {dbClient, layout:false})
+    res.render('client/client-fonts', {dbClient, layout:false, id})
 
     })
 
@@ -81,7 +81,7 @@ router.get("/:id/client-color", isLoggedIn, async (req, res, next) => {
     }))
 
     .then(() =>{
-      res.render("client/client-color", {clientColor})  
+      res.render("client/client-color", {clientColor, clientId})  
 
   })
 }

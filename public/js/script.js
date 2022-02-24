@@ -3,12 +3,12 @@ document.addEventListener(
   () => {
     
     console.log("project2 JS imported successfully!");
-    if ( localStorage.getItem('theme') === 'dark'){
-      document.getElementById("body").classList.remove("light-mode");
+    if ( localStorage.getItem('theme') === 'light'){
+      document.getElementById("body").classList.remove("dark-mode");
       checkbox.checked = false;
     } else {
       checkbox.checked = true;
-      document.getElementById("body").classList.add("light-mode");
+      document.getElementById("body").classList.add("dark-mode");
     }
   },
   false
@@ -24,16 +24,16 @@ const menu_btn = document.querySelector('.hamburger');
 		hamburger_menu.classList.toggle('is-active');
 	});
 
-  document.cookie = "light-mode";
+  document.cookie = "dark-mode";
 
   if(document.cookie){
   function handleChange(checkbox) {
     if(checkbox.checked == true){
-         document.getElementById("body").classList.add("light-mode");
-        localStorage.setItem("theme", "light");
-    }else{
-        document.getElementById("body").classList.remove("light-mode");
+         document.getElementById("body").classList.add("dark-mode");
         localStorage.setItem("theme", "dark");
+    }else{
+        document.getElementById("body").classList.remove("dark-mode");
+        localStorage.setItem("theme", "light");
    }
  } 
 }

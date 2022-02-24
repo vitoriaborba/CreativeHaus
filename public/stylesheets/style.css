@@ -14,10 +14,10 @@ body {
   font-family: 'montserrat';
   font-weight:600;
   margin: 50px;
-  background-color:rgb(19, 18, 18);
+  background-color:rgb(92, 146, 128);
 }
-.light-mode {
-  background-color: rgb(92, 146, 128);
+.dark-mode {
+  background-color: rgb(19, 18, 18);
   
 }
 
@@ -724,7 +724,7 @@ margin-top: 10px;
   align-items: flex-start;
   margin: 30px;
   min-width: 20vw;
-  min-height: 30vh;
+  min-height: 50vh;
   border:solid 2px whitesmoke;
   padding: 30px;
   border-radius: 20px;

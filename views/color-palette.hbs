@@ -1,32 +1,35 @@
 <header>
          <div class="nav-bar">
-		<div class="nav-container">
-            <nav class="hamburger-nav">
-               <div class="nav">
-                  <div class="nav-btns">
-                     {{#unless user}}
-                     <a href="/auth/signup">Sign Up</a>
-                     <a href="/auth/login">Login</a>
-                     {{/unless}}
-                     {{#if user}}
-                     <a href="/user/user-home">User profile</a>
+               <div class="nav-container">
+                     <nav class="hamburger-nav">
+                        <div class="nav">
+                           <div class="nav-btns">
+                              {{#unless user}}
+                              <a href="/auth/signup">Sign Up</a>
+                              <a href="/auth/login">Login</a>
+                              {{/unless}}
+                              {{#if user}}
+                              <a href="/user/user-home">User profile</a>
+                           </div>
+                           <div class="log-out">
+                              <a href="/auth/logout">Log Out</a>
+                           </div>
+                           {{/if}}
+                        </div>
+                     </nav>
+                  <div class="logo-container">
+                  <button class="hamburger">
+                     <div class="bar"></div>
+                  </button>
                   </div>
-                  <div class="log-out">
-                     <a href="/auth/logout">Log Out</a>
-                  </div>
-                  {{/if}}
-                </div>
-            </nav>
-			<button class="hamburger">
-				<div class="bar"></div>
-			</button>
+                  <a class="logo" href="/">CreativeHaus</a>
+               <div class="container-switch">
+                  <label class="switch">
+               <input id='checkbox' type="checkbox" onchange='handleChange(this);'>
+               <span class="slider round"></span>
+               </label>
+            </div>
          </div>
-               <a class="logo" href="/">CreativeHaus</a>
-      <div class="container-switch">
-         <label class="switch">
-  <input id='checkbox' type="checkbox" onchange='handleChange(this);'>
-  <span class="slider round"></span>
-  </label>
       </div>
 	</header>
 <section class="body">

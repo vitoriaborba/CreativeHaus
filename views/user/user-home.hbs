@@ -6,9 +6,6 @@
             <nav class="hamburger-nav">
                <div class="nav">
                   <div class="nav-btns">
-                     <div>
-                         <a href="/user/client-list">Clients</a>
-                     </div>
                     <div class="log-out">
                      <a href="/auth/logout">Log Out</a>
                     </div>
@@ -18,15 +15,25 @@
 			<button class="hamburger">
 				<div class="bar"></div>
 			</button>
-		</div>
-      <a class="logo" href="/">CreativeHaus</a>
+               <a class="logo" href="/">CreativeHaus</a>
+       <div class="container-switch">
+          <label class="switch">
+  <input id='checkbox' type="checkbox" onchange='handleChange(this);'>
+  <span class="slider round"></span>
+  </label>
       </div>
 	</header>
 
 <div class="container">
 
 <div class="centered-box">
+    <div class="loader margin-top">
 <h1>Welcome {{user.username}}!</h1>
+    </div>
+     <div class="nav-btns">
+        <a href="/user/client-list">Clients</a>
+    </div>
+
 </div>
 
 </div>

@@ -14,6 +14,7 @@
       <link rel="stylesheet" href="/stylesheets/style.css" />
       <link rel="stylesheet" href="/stylesheets/nav.css">
       <link rel="stylesheet" href="/stylesheets/animation.css">
+      <link rel="stylesheet" href="/stylesheets/switch.css">
 
       <style>
 
@@ -27,7 +28,7 @@
 
    </head>
 
-   <body>
+   <body id="body" class="light-mode">
 
          <header>
                   <div class="nav-bar">
@@ -49,6 +50,12 @@
                   </button>
                </div>
                <a class="logo" href="/">CreativeHaus</a>
+               </div>
+               <div class="container-switch">
+         <label class="switch">
+            <input id='checkbox' type="checkbox" onchange='handleChange(this);'>
+            <span class="slider round"></span>
+            </label>
                </div>
             </header>
 

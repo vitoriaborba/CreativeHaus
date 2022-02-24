@@ -11,6 +11,7 @@
   font-weight: lighter;
 
 }
+
 .typewriter h1:nth-child(1){
   width: 500px;
   margin: 0 auto; /* Gives that scrolling effect as the typing happens */
@@ -42,7 +43,7 @@
   width: 348.33;
   opacity: 0;
   margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-  -webkit-box-reflect: below -28px linear-gradient(transparent, rgba(255, 255, 255, 0.212));
+  -webkit-box-reflect: below -28px linear-gradient(transparent, rgba(255, 255, 255, 0.418));
   -webkit-animation: 
     typing4 3s steps(30, end),
     blink-caret .5s step-end infinite;
@@ -180,7 +181,7 @@
 }
 .loader h1:nth-child(1){
   margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-  color: rgb(206, 206, 206);
+  color: whitesmoke;
   -webkit-animation: 
     type 2s steps(30, end),
     blink-caret .4s step-end infinite;
@@ -204,7 +205,7 @@
 }
 
 .blue {
-  color: rgb(35, 111, 155);
+  color:#2dcef7;
   font-family: 'Noto Serif Display', serif;
 
 }
@@ -230,4 +231,16 @@
   align-items: center;
   padding: 20px;
   margin-bottom: 20px;
+}
+
+.link-generate {
+  text-decoration-color: #73cadf73;
+  color: white;
+  text-decoration-style:solid;
+ 
+ 
+}
+.link-generate:hover { 
+  text-decoration-color: #aaf126;
+  color: rgb(161, 161, 161);
 }

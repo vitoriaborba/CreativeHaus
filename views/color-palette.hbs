@@ -20,8 +20,13 @@
 			<button class="hamburger">
 				<div class="bar"></div>
 			</button>
-		</div>
-      <a class="logo" href="/">CreativeHaus</a>
+         </div>
+               <a class="logo" href="/">CreativeHaus</a>
+      <div class="container-switch">
+         <label class="switch">
+  <input id='checkbox' type="checkbox" onchange='handleChange(this);'>
+  <span class="slider round"></span>
+  </label>
       </div>
 	</header>
 <section class="body">
@@ -30,12 +35,7 @@
 <div class="color-palette-container">
 <div class="animate">
 <div class="loader" >
-   <h1 class="color-palette-title">Need a 
-      <span class="color-font">
-        <span style="color: #29C414 ;">C</span><span style="color: #13CA35 ;">o</span><span style="color: #13D06E;">l</span><span style="color: #12D6AB;">o</span><span style="color: #11CBDC ;">r</span>  
-      </span>
-      
-      Palette Inspo?</h1>
+   <h1 class="color-palette-title">Need a Color Palette Inspo?</h1>
 </div> 
 </div>
 
@@ -47,23 +47,29 @@
       <label> Pick a base color &#187;</label>
       <input class="color-picker" name="colorhex" type="color" id="colorpicker" value="#11CBDC">
    </div>
-    <div class="radio-btns">
-       <label for="monochrome"> Monochrome 
-          <input type="radio" name="paletteOption" id="monochrome" value="monochrome">
+
+    <div class="radio-btns-container">
+       <label class="radio-btns-vitoria">Monochrome 
+       <input type="radio" name="paletteOption" id="monochrome" value="monochrome">
+       <span class="checkmark"></span>
        </label>
-      <label for="analogic"> Analogic 
-     <input type="radio" name="paletteOption" id="analogic" value="analogic">
-      </label>
-      <label for="complement"> Complement
-     <input type="radio" name="paletteOption" id="complement" value="complement">
-      </label>
-      <label for="triad"> Triad 
-     <input type="radio" name="paletteOption" id="triad" value="triad">
-      </label>
-      <label for="quad"> Quad 
-     <input type="radio" name="paletteOption" id="quad" value="quad">
-      </label>
-      <button id="form-btn" type="submit">Go</button>
+       <label class="radio-btns-vitoria">Analogic
+       <input type="radio" name="paletteOption" id="analogic" value="analogic">
+       <span class="checkmark"></span>
+       </label>
+       <label class="radio-btns-vitoria">Complement
+       <input type="radio" name="paletteOption" id="complement" value="complement">
+       <span class="checkmark"></span>
+       </label>
+       <label class="radio-btns-vitoria">Triad
+       <input type="radio" name="paletteOption" id="triad" value="triad">
+       <span class="checkmark"></span>
+       </label>
+       <label class="radio-btns-vitoria">Quad
+       <input type="radio" name="paletteOption" id="quad" value="quad">
+       <span class="checkmark"></span>
+       </label>
+      <button id="check-btn" type="submit">Go</button>
     </div>
 </form>
 {{#if errorMessage}}

@@ -7,9 +7,11 @@
 
 .nav-container {
 	width: 100%;
-	margin: 0 auto;
+	margin: 0;
 	padding-left: 10px;
 	padding-right: 10px;
+	display: flex;
+	justify-content:space-between;
 
 }
 
@@ -58,7 +60,7 @@
 	min-height: 100vh;
 	display: block;
 	z-index: 98;
-	background-color: rgb(19, 18, 18);;
+	background: rgb(19, 18, 18);
 	padding-top: 140px;
 	transition: 0.4s;
     border-right: solid 2px whitesmoke;
@@ -100,4 +102,33 @@
 	text-transform: uppercase;
 	color: white;
 	text-decoration: none;
+}
+
+.nav-btns a {
+	display:block;
+	width: 100%;
+	max-width: 200px;
+	margin: 20px auto;
+	text-align: center;
+	padding: 12px 20px;
+	background-color: transparent;
+	color: whitesmoke;
+	text-decoration: none;
+  	border: solid 2px whitesmoke;
+  	border-radius: 25px;
+  	font-size: 1.4em;
+
+}
+
+.nav-btns a:hover {
+	
+	background-color: whitesmoke;
+	color: black;
+  	border: solid 2px whitesmoke;
+  	
+
+}
+
+.margin-top {
+	margin-top: 30px;
 }

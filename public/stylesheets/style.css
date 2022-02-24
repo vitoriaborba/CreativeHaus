@@ -14,11 +14,11 @@ body {
   font-family: 'montserrat';
   font-weight:600;
   margin: 50px;
-  background-color:black;
+  background-color:rgb(19, 18, 18);
 }
 .light-mode {
-  background-color: rgb(155, 108, 108);
-  color: white;
+  background-color: rgb(92, 146, 128);
+  
 }
 
 
@@ -224,6 +224,17 @@ input[type='file']::-webkit-file-upload-button {
   background-color: transparent;
   font-family: 'Montserrat', sans-serif;
 }
+#check-btn {
+  border: solid 2px whitesmoke;
+  color: whitesmoke;
+  text-decoration: none;
+  padding: 10px 30px;
+  border-radius: 25px;
+  font-size: 1em;
+  margin: 10px 0px;
+  background-color: transparent;
+  font-family: 'Montserrat', sans-serif;
+}
 
 #form-btn:hover {
   background-color: whitesmoke;
@@ -340,6 +351,13 @@ input[type="color"]::-webkit-color-swatch {
   border: none;
   border-radius: 50%;
 }
+.radio-btns-container {
+  color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+}
 
 .radio-btns {
   display: flex;
@@ -347,10 +365,66 @@ input[type="color"]::-webkit-color-swatch {
   align-items: center;
 }
 
+.radio-btns-vitoria {
+  display: block;
+  position: relative;
+  padding-left: 30px;
+  padding-right: 20px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.radio-btns-vitoria input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background: transparent;
+  border: 1px solid white;
+  border-radius: 30px;
+}
+
 .radio-btns label {
   margin: 20px;
   color: white;
   font-size: 1.2em;
+
+}
+
+/* On mouse-over, add a grey background color */
+.radio-btns-vitoria:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.radio-btns-vitoria input:checked ~ .checkmark {
+  background-color: #11cbdc;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.radio-btns-vitoria input:checked ~ .checkmark:after {
+  display: block;
 }
 input[type="radio"] {
   width: 20px;
@@ -358,6 +432,19 @@ input[type="radio"] {
   margin-bottom: 0px;
   margin-left: 10px;
 
+}
+
+/* Style the checkmark/indicator */
+.radio-btns .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 /* Color Palette Display */
@@ -447,11 +534,9 @@ input[type="radio"] {
 
 
 /* ---------------------- CLIENT LIST PAGE ---------------- */
-
 .client-name {
   font-size: 3em;
 }
-
 .client-row {
   display: flex;
   flex-wrap: wrap;
@@ -550,8 +635,7 @@ font-weight: bold;
   border:none;
   margin-bottom: 0px;
   padding-bottom: 0px;
-  max-width: 200px;
-  min-width: 200px;
+  width:100%;
   overflow-x: hidden;
 }
 
@@ -559,14 +643,17 @@ font-weight: bold;
   display:flex;
   flex-direction: column;
   justify-content: center;
+  margin: auto;
+  width: 78%;
   align-items: center;
   border: solid 2px whitesmoke;
   border-radius: 30px;
-  padding: 10px;
+  padding: 11px;
   margin-bottom: 10px;
 }
 
 .font-radio-btns {
+  margin: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -574,6 +661,11 @@ font-weight: bold;
   font-size: 1em;
   margin-bottom: 30px;
   margin-top: 10px;
+}
+
+.font-radio-btns label {
+  display: flex;
+  align-items: center;
 }
 
 .font-radio-btns .middle {
@@ -615,7 +707,6 @@ margin-top: 10px;
   color: red;
   border-bottom: solid 2px red;
 }
-
 /* Client Fonts Page */
 
 .font-info-box {

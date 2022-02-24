@@ -23,7 +23,7 @@ router.get("/:id/client-page", isLoggedIn, (req, res, next) =>{
     .then( async (dbclient)=>{
         console.log(dbclient)
         let fontData = await axios.get(`https://www.googleapis.com/webfonts/v1/webfonts?key=${process.env.GOOGLE_KEY}`);
-        console.log(fontData.data.items)
+        // console.log(fontData.data.items)
         res.render("client/client-page", {clientDetails: dbclient, fontInfo: fontData.data.items, jsonData: encodeURIComponent(JSON.stringify(fontData.data.items))})
         
     })
@@ -32,9 +32,28 @@ router.get("/:id/client-page", isLoggedIn, (req, res, next) =>{
 // Create Client Font Page
 
 router.get("/:id/client-fonts", isLoggedIn, (req, res, next) => {
+    const {id} = req.params;
+    console.log(id)
+    Client.findById(id)
+    .then( async (dbClient) => {
 
-    res.render('client/client-fonts')
+        console.log(dbClient)
 
+        let fontData = dbClient.fontSuite.map((font) => {
+
+            let newFont = font.family.split(' ').join('+')
+
+            return {...font, newFont}
+
+        })
+
+        console.log(fontData)
+        dbClient.fontSuite = fontData;
+    
+
+    res.render('client/client-fonts', {dbClient, layout:false})
+
+    })
 
 })
 
@@ -127,8 +146,8 @@ router.post("/:id/new-color", isLoggedIn, (req, res, next) => {
 
     router.post("/:id/new-font", isLoggedIn, async (req, res, next) => {
         const clientId = req.params.id;
-        const {fontVar, fontName, fontOption} = req.body
-        let newFont = {family: fontName, option: fontOption, variant: fontVar}
+        const {fontVar, fontName, fontOption, fontStyles} = req.body
+        let newFont = {family: fontName, option: fontOption, variant: fontVar, styles: fontStyles}
 
         console.log(req.body)
         

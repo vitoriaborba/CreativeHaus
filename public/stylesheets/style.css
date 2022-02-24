@@ -243,22 +243,27 @@ h1 {
 }
 
 h2 {
-  color: white;
+  color: whitesmoke;
   font-size: 3.5em;
 }
 
 h3 {
-  color: white;
+  color: whitesmoke;
+  font-size: 1.8em;
 }
 
 h4 {
-  color: white;
+  color: whitesmoke;
   font-size: 1.3em;
+}
+
+h5 {
+  color: whitesmoke;
 }
 
 
 p {
-  color: white;
+  color: whitesmoke;
 }
 
 /* -------------- CLIENT COLOR PALETTE DETAILS PAGE -------------- */
@@ -439,6 +444,10 @@ input[type="radio"] {
 
 /* ---------------------- CLIENT LIST PAGE ---------------- */
 
+.client-name {
+  font-size: 3em;
+}
+
 .client-row {
   display: flex;
   flex-wrap: wrap;
@@ -457,12 +466,13 @@ margin: 20px;
 text-align: center;
 color: whitesmoke;
 margin-top: 10px;
-font-size: 1.6em;
+font-size: 1.5em;
+font-weight: 400;
 
 }
 
 .client-details a img {
-  width: 150px;
+  width: 130px;
   margin-bottom: 20px;
 }
 
@@ -537,16 +547,18 @@ font-weight: bold;
   margin-bottom: 0px;
   padding-bottom: 0px;
   max-width: 200px;
+  min-width: 200px;
   overflow-x: hidden;
 }
 
 .add-font {
   display:flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   border: solid 2px whitesmoke;
   border-radius: 30px;
-  padding: 10px 10px 10px 20px;
+  padding: 10px;
   margin-bottom: 10px;
 }
 
@@ -556,13 +568,17 @@ font-weight: bold;
   align-items: center;
   color: white;
   font-size: 1em;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   margin-top: 10px;
 }
 
 .font-radio-btns .middle {
-  margin-left: 10px;
-  margin-right: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.font-form label {
+  color: white;
 }
 
 
@@ -596,3 +612,45 @@ margin-top: 10px;
   border-bottom: solid 2px red;
 }
 
+/* Client Fonts Page */
+
+.font-info-box {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 10px;
+
+}
+
+.font-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 30px;
+  min-width: 20vw;
+  min-height: 30vh;
+  border:solid 2px whitesmoke;
+  padding: 30px;
+  border-radius: 20px;
+}
+
+.font-info h5 {
+  font-size: 1.0em;
+  border-bottom: solid 2px fuchsia;
+  display: inline-block;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.font-info p {
+  font-size: 1.4em;
+}
+
+.font-info h2 {
+  margin-bottom: 10px;
+  margin-top: 5px;
+}

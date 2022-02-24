@@ -46,13 +46,22 @@
                                        <input type="radio" name="fontOption" id="body" value="body">
                                  </label>
                               </div>
+                              <div class='font-styles'>
+                                 <label for="case">Case</label>
+                                 <input id="case" name="fontStyles" type="text">
+                                 <label for="letterSpacing">Letter Spacing</label>
+                                 <input id="letterSpacing" name="fontStyles" type="text">
+                                 <label for="fontNotes">Notes</label>
+                                 <input id="fontNotes" name="fontStyles" type="text">
+                              </div>
                               <button id="form-btn-center" type="submit">Add Font</button>
                            </form>
+                           
                         </div>
                      
-                    <div class="log-out">
+                    {{!-- <div class="log-out">
                      <a href="/auth/logout">Log Out</a>
-                    </div>
+                    </div> --}}
             </nav>
 			<button class="hamburger">
 				<div class="bar"></div>
@@ -69,10 +78,9 @@
 
    
 
-      <h1>{{clientDetails.name}}</h1>
+      <h1 class="client-name">{{clientDetails.name}}</h1>
 
       <div class="box-row">
-
          <div class="color-palette-box">
             <h3>Color Palette</h3>
             <div class="color-circles">
@@ -92,15 +100,12 @@
             <h3>Font Suite</h3>
             <div class="font-display">
                <h4 value="subheader">
-               <style>@import url('https://fonts.googleapis.com/css2?family={{fontNameSub}}:ital,wght@{{fontVarSub}}&display=swap');</style>
                Subheader
                </h4>
                <h2 value="header"> 
-               <style>@import url('https://fonts.googleapis.com/css2?family={{fontNameHead}}:ital,wght@{{fontVarHead}}&display=swap');</style>
                Header
                </h2>
                <p value="body">
-               <style>@import url('https://fonts.googleapis.com/css2?family={{fontNameBody}}:ital,wght@{{fontVarBody}}&display=swap');</style>
                Tacos shabby chic iceland, listicle fanny pack typewriter woke lomo helvetica tbh readymade master cleanse letterpress. Hexagon actually viral ethical organic iPhone keffiyeh before they sold out meditation.
                </p>
             </div>

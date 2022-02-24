@@ -1,51 +1,90 @@
-<header>
-         <div class="nav-bar">
-		<div class="nav-container">
-            <nav class="hamburger-nav">
-               <div class="nav">
-                  <div class="nav-btns">
-                     <a id="back-btn" href="/user/client-list"> &#171 back</a>
-                     <a href="/user/user-home">User profile</a>
+<!DOCTYPE html>
+<html lang="en">
 
-                  </div>
-                  <div class="log-out">
-                     <a href="/auth/logout">Log Out</a>
-                  </div>
-                </div>
-            </nav>
-			<button class="hamburger">
-				<div class="bar"></div>
-			</button>
-		</div>
-      <a class="logo" href="/">CreativeHaus</a>
-      </div>
-	</header>
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>{{title}}</title>
 
-    <div class="container">
+      <link rel="stylesheet" href="https://use.typekit.net/hxn6mar.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="/stylesheets/style.css" />
+      <link rel="stylesheet" href="/stylesheets/nav.css">
+      <link rel="stylesheet" href="/stylesheets/animation.css">
 
-        <h1>Font Suite</h1>
+      <style>
 
-        {{#each clientFonts}}
+      {{#each dbClient.fontSuite}}
 
-        <h4>{{this.fontOption}}</h4>
-        <h2>{{this.fontFamily}}</h2>
+      @import url(`https://fonts.googleapis.com/css2?family={{this.newFont}}:wght@{{this.variant}}&display=swap`);
 
-        <div class="font-style-form">
-            <h5>Font Styling</h5>
-            <form action="/client/client-fonts/edit-styles">
-                <label for="case">Case:
-                    <input name="case"type="text">
-                </label>
-                <label for="letter-spacing">Letter spacing:
-                    <input name="letter-spacing" type="text">
-                </label>
-                <label for="color-use">Color use:
-                    <input name="color-use" type="text">
-                </label>
-                <button type="submit">Edit Styles</button>
-            </form>
-        </div>
+      {{/each}}
 
-        {{/each}}
+      </style>
 
-</div>
+   </head>
+
+   <body>
+
+         <header>
+                  <div class="nav-bar">
+               <div class="nav-container">
+                     <nav class="hamburger-nav">
+                        <div class="nav">
+                           <div class="nav-btns">
+                              <a id="back-btn" href="/user/client-list"> &#171 back</a>
+                              <a href="/user/user-home">User profile</a>
+
+                           </div>
+                           <div class="log-out">
+                              <a href="/auth/logout">Log Out</a>
+                           </div>
+                        </div>
+                     </nav>
+                  <button class="hamburger">
+                     <div class="bar"></div>
+                  </button>
+               </div>
+               <a class="logo" href="/">CreativeHaus</a>
+               </div>
+            </header>
+
+            <div class="container">
+
+               <h1>Font Suite</h1>
+
+               <div class="font-info-box">
+                  
+               {{#each dbClient.fontSuite}}
+
+                  <div class="font-info">
+                     <h4>{{this.option}}</h4>
+
+                     <h2 id="font-family" style="font-family:'{{this.family}}';">{{this.family}}</h2>
+
+                     <div class="font-style-form">
+                           <h3>Font Styles</h3>
+                           <h5>Weight:</h5>
+                           <p>{{this.variant}}</p>
+                           <h5>Case:</h5>
+                           <p>{{this.styles.[0]}}</p>
+                           <h5>Letter Spacing:</h5>
+                           <p>{{this.styles.[1]}}</p>
+                           <h5>Notes:</h5>
+                           <p>{{this.styles.[2]}}</p>
+                     </div>
+
+               </div>
+
+               {{/each}}
+
+               </div>
+
+         </div>
+      <script src="/js/script.js"></script>
+   </body>
+
+</html>

@@ -14,9 +14,18 @@
       <link rel="stylesheet" href="/stylesheets/style.css" />
       <link rel="stylesheet" href="/stylesheets/nav.css">
       <link rel="stylesheet" href="/stylesheets/animation.css">
+      <link rel="stylesheet" href="/stylesheets/switch.css">
    </head>
 
-   <body>
+   <body id="body" class="light-mode">
+
+   <div class="container-switch">
+   <label class="switch">
+  <input id='checkbox' type="checkbox" onchange='handleChange(this);'>
+  <span class="slider round"></span>
+
+  </label>
+      </div>
 
       {{{body}}}
 

@@ -31,7 +31,7 @@ router.get("/:id/client-page", isLoggedIn, (req, res, next) =>{
 
 // Create Client Font Page
 
-router.get("/client/:id/client-fonts", isLoggedIn, (req, res, next) => {
+router.get("/:id/client-fonts", isLoggedIn, (req, res, next) => {
 
     res.render('client/client-fonts')
 
@@ -137,7 +137,7 @@ router.post("/:id/new-color", isLoggedIn, (req, res, next) => {
             
             console.log(updatedFonts)
 
-        res.render(`/client/client-page`,{clientFonts:updatedFonts} )
+            res.redirect(`/client/${clientId}/client-page`)
 
         })
         .catch(err => next(err))

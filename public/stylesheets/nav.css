@@ -94,3 +94,10 @@
   justify-content: space-between;
   height: 70vh;
 }
+
+.logo {
+	font-size: 2em;
+	text-transform: uppercase;
+	color: white;
+	text-decoration: none;
+}

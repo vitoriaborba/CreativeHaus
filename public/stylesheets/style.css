@@ -14,7 +14,11 @@ body {
   font-family: 'montserrat';
   font-weight:600;
   margin: 50px;
-  background-color: rgb(19, 18, 18);
+  background-color:black;
+}
+.light-mode {
+  background-color: rgb(155, 108, 108);
+  color: white;
 }
 
 
@@ -218,7 +222,7 @@ input[type='file']::-webkit-file-upload-button {
   font-size: 1.4em;
   margin: 20px 0px;
   background-color: transparent;
-  font-family: montserrat;
+  font-family: 'Montserrat', sans-serif;
 }
 
 #form-btn:hover {

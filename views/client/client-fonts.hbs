@@ -17,25 +17,35 @@
 				<div class="bar"></div>
 			</button>
 		</div>
-      <img id="logo" src="/images/CreativeHaus-Logo-White-Small.png">
+      <a class="logo" href="/">CreativeHaus</a>
       </div>
 	</header>
 
-<h1>Font Suite</h1>
+    <div class="container">
 
-<h4>Header/Subheader/Body</h4>
-<h2>Font Name</h2>
+        <h1>Font Suite</h1>
 
-<h5>Font Styling</h5>
-<form action="/client/client-fonts/edit-styles">
-    <label for="case">Case:
-        <input name="case"type="text">
-    </label>
-    <label for="letter-spacing">Letter spacing:
-        <input name="letter-spacing" type="text">
-    </label>
-    <label for="color-use">Color use:
-        <input name="color-use" type="text">
-    </label>
-    <button type="submit">Edit Styles</button>
-</form>
+        {{#each clientFonts}}
+
+        <h4>{{this.fontOption}}</h4>
+        <h2>{{this.fontFamily}}</h2>
+
+        <div class="font-style-form">
+            <h5>Font Styling</h5>
+            <form action="/client/client-fonts/edit-styles">
+                <label for="case">Case:
+                    <input name="case"type="text">
+                </label>
+                <label for="letter-spacing">Letter spacing:
+                    <input name="letter-spacing" type="text">
+                </label>
+                <label for="color-use">Color use:
+                    <input name="color-use" type="text">
+                </label>
+                <button type="submit">Edit Styles</button>
+            </form>
+        </div>
+
+        {{/each}}
+
+</div>

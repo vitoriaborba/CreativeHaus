@@ -1,5 +1,7 @@
 /* Global Styles */
 
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@600&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -47,7 +49,7 @@ body {
   padding: 10px 30px;
   border-radius: 25px;
   font-size: 1.4em;
-  margin: 30px 10px;
+  margin: 60px 10px 30px 10px;
 }
 
 .btn:hover {
@@ -235,9 +237,8 @@ input[type='file']::-webkit-file-upload-button {
 
 
 h1 {
-  font-family: 'nimbus-sans-extended';
-  font-weight: 900;
-  font-size: 5em;
+  font-family: 'Noto Serif Display';
+  font-size: 5.2em;
   color: whitesmoke;
 }
 
@@ -254,12 +255,6 @@ h4 {
   color: white;
   font-size: 1.3em;
 }
-
-h5 {
-  color:white;
-  font-size: 2em;
-}
-
 
 
 p {
@@ -292,7 +287,7 @@ p {
 
 
 /* Color Picker */
-.color-palette-container{
+.color-palette-container {
   display: flex;
   flex-direction: column;
 }
@@ -451,14 +446,19 @@ input[type="radio"] {
 .client-details {
 display: flex;
 flex-direction: column;
+justify-content: center;
+align-items:center;
 padding: 10px;
 margin: 20px;
 
 }
 
-.client-details h2 {
+.client-details h5 {
 text-align: center;
 color: whitesmoke;
+margin-top: 10px;
+font-size: 1.6em;
+
 }
 
 .client-details a img {

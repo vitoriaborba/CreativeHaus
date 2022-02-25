@@ -1,7 +1,6 @@
 /* The switch - the box around the slider */
 .container-switch {
   display: flex;
-  margin-left: 20px;
   justify-content: flex-end;
   margin-top: 0;
 } 
@@ -46,11 +45,11 @@
 }
 
 input:checked + .slider {
-  background-color: #5fd5f3b7;
+  background-color: rgb(92, 146, 128);
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #5fd5f3b7;
+  box-shadow: 0 0 1px rgb(92, 146, 128);
 }
 
 input:checked + .slider:before {
